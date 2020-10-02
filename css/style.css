@@ -252,6 +252,7 @@ ol {
 
 .header__top {
 	background: #f5f5f5;
+	display: none;
 }
 
 .header__top__left {
@@ -417,6 +418,8 @@ ol {
 
 .header__menu {
 	padding: 24px 0;
+	/* display: none; */
+	text-align: center;
 }
 
 .header__menu ul li {
@@ -643,7 +646,8 @@ ol {
 	height: 50px;
 	border: 1px solid #ebebeb;
 	position: relative;
-	float: left;
+	/* float: left; */
+	margin: 0 auto;
 }
 
 .hero__search__form form .hero__search__categories {
@@ -655,6 +659,7 @@ ol {
 	padding-left: 18px;
 	padding-top: 11px;
 	position: relative;
+	display: none;
 }
 
 .hero__search__form form .hero__search__categories:after {
@@ -696,6 +701,7 @@ ol {
 
 .hero__search__phone {
 	float: right;
+	display: none;
 }
 
 .hero__search__phone__icon {
@@ -3080,6 +3086,7 @@ ol {
 	}
 	.humberger__menu__widget {
 		margin-bottom: 20px;
+		display: none;
 	}
 	.humberger__menu__widget .header__top__right__language {
 		margin-right: 20px;
@@ -3163,6 +3170,9 @@ ol {
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	.featured__item__pic__hover{
+		bottom: 20px;
+	}
 	.hero__categories {
 		margin-bottom: 30px;
 	}
@@ -3337,6 +3347,7 @@ ol {
 		margin-bottom: 25px;
 	}
 	.humberger__menu__widget {
+		display: none;
 		margin-bottom: 20px;
 	}
 	.humberger__menu__widget .header__top__right__language {
