@@ -773,7 +773,11 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
-
+    <script>
+        $.get("./data/Product.json", function(data, status){
+            console.log("Data: " , data);
+        });
+    </script>
 
 </body>
 

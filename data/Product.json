@@ -1,0 +1,51 @@
+[
+  {
+    "product_status": "available",
+    "productId": 1983721,
+    "productName": "aroma milk",
+    "misc": "10 % offer on 3 liters",
+    "max_quantity": "10",
+    "min_range": "0.25",
+    "quantity_unit": "liter",
+    "price_per_unit": 21,
+    "prod_desc": "",
+    "category": "dairy_products"
+  },
+  {
+    "product_status": "available",
+    "productId": 9723491,
+    "productName": "Arogya milk",
+    "misc": "10 % offer on 1 liters",
+    "max_quantity": "10",
+    "min_range": "0.25",
+    "quantity_unit": "liter",
+    "price_per_unit": 24,
+    "prod_desc": "",
+    "category": "dairy_products"
+  },
+  {
+    "product_status": "available",
+    "productId": 10030321,
+    "productName": "Potato",
+    "misc": "10 % offer on 3 KG",
+    "max_quantity": "10",
+    "min_range": "0.1",
+    "quantity_unit": "kilograms",
+    "price_per_unit": 40,
+    "prod_desc": "",
+    "category": "vegetables"
+  },
+  {
+    "product_status": "available",
+    "productId": 9755491,
+    "productName": "Brinjal",
+    "misc": "Limeted product_status available",
+    "max_quantity": "20",
+    "max_quantity": "10",
+    "min_range": "0.5",
+    "quantity_unit": "kilograms",
+    "price_per_unit": 16,
+    "prod_desc": "Specially imported from gujarat",
+    "category": "vegetables"
+  }
+]
