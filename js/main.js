@@ -1,6 +1,6 @@
 /*  ---------------------------------------------------
-    Template Name: Ecommerce
-    Description:  Ecommerce eCommerce  HTML Template
+    site Name: Ecommerce
+    Description:  Ecommerce eCommerce  HTML site
     Author: ecommerce
     Author URI: https://ecommerce.com
     Version: 1.0
@@ -246,5 +246,5 @@
 })(jQuery);
 
 function formatSpace(str){
-    return str.replaceAll(" ","").trim();
+    return str.replace(/[^\w\s]/gi, '');
 }
