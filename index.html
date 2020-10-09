@@ -705,7 +705,7 @@
 
         // category append
         categoryArray.forEach((val,index)=>{
-            $('.featured__controls ul').append(`<li data-filter=".${val}">${val.replaceAll("_"," ")}</li>`);
+            $('.featured__controls ul').append(`<li data-filter=".${val}">${formatSpace(val)}</li>`);
         });
 
         // Product append
