@@ -209,7 +209,13 @@
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
         if ($button.hasClass('inc')) {
-            var newVal = parseFloat(oldValue) + 1;
+            let productDetail = JSON.parse(localStorage.getItem('productDetails'));
+            let maxQuantity = productDetail.productQuantity;
+            if(parseFloat(oldValue) < maxQuantity){
+                var newVal = parseFloat(oldValue) + 1;
+            }else{
+                var newVal = parseFloat(oldValue)
+            }
         } else {
             // Don't allow decrementing below zero
             if (oldValue > 0) {
@@ -221,4 +227,24 @@
         $button.parent().find('input').val(newVal);
     });
 
+    $(document).on('click','.featured__item__pic',function(){
+        
+        var productDetails = {
+            productID: $(this).data('id'),
+            productName: $(this).data('title'),
+            productImage: $(this).data('img'),
+            productDesc: $(this).data('desc'),
+            productPrice: $(this).data('price'),
+            productStatus: $(this).data('status'),
+            productWeight: $(this).data('weight'),
+            productQuantity: $(this).data('quantity')
+        }
+        console.log(productDetails);
+        localStorage.setItem('productDetails',JSON.stringify(productDetails));
+        location.href="shop-details.html";
+    });
 })(jQuery);
+
+function formatSpace(str){
+    return str.replaceAll(" ","").trim();
+}

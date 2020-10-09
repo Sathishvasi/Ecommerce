@@ -408,8 +408,9 @@ ol {
 	margin-right: 6px;
 }
 
-.header__logo {
-	padding: 15px 0;
+.header__logo img{
+	/* padding: 15px 0; */
+	width: 150px;
 }
 
 .header__logo a {
@@ -834,6 +835,7 @@ ol {
 	margin-right: 25px;
 	position: relative;
 	cursor: pointer;
+	text-transform: capitalize;
 }
 
 .featured__controls ul li.active:after {
@@ -868,6 +870,7 @@ ol {
 	position: relative;
 	overflow: hidden;
 	background-position: center center;
+	cursor: pointer;
 }
 
 .featured__item__pic__hover {
@@ -942,6 +945,7 @@ ol {
 
 .featured__item__text h6 a {
 	color: #252525;
+	text-transform: capitalize;
 }
 
 .featured__item__text h5 {

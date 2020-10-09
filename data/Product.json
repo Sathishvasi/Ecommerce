@@ -7,9 +7,10 @@
     "max_quantity": "10",
     "min_range": "0.25",
     "quantity_unit": "liter",
-    "price_per_unit": 21,
-    "prod_desc": "",
-    "category": "dairy_products"
+    "price_per_unit": "21.00",
+    "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+    "category": "dairy_products",
+    "productImage": "img/featured/feature-1.jpg"
   },
   {
     "product_status": "available",
@@ -19,9 +20,10 @@
     "max_quantity": "10",
     "min_range": "0.25",
     "quantity_unit": "liter",
-    "price_per_unit": 24,
-    "prod_desc": "",
-    "category": "dairy_products"
+    "price_per_unit": "24.00",
+    "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+    "category": "dairy_products",
+    "productImage": "img/featured/feature-2.jpg"
   },
   {
     "product_status": "available",
@@ -31,9 +33,10 @@
     "max_quantity": "10",
     "min_range": "0.1",
     "quantity_unit": "kilograms",
-    "price_per_unit": 40,
-    "prod_desc": "",
-    "category": "vegetables"
+    "price_per_unit": "40.00",
+    "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+    "category": "vegetables",
+    "productImage": "img/featured/feature-3.jpg"
   },
   {
     "product_status": "available",
@@ -41,11 +44,37 @@
     "productName": "Brinjal",
     "misc": "Limeted product_status available",
     "max_quantity": "20",
-    "max_quantity": "10",
     "min_range": "0.5",
     "quantity_unit": "kilograms",
-    "price_per_unit": 16,
-    "prod_desc": "Specially imported from gujarat",
-    "category": "vegetables"
+    "price_per_unit": "16.00",
+    "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
+    "category": "vegetables",
+    "productImage": "img/featured/feature-4.jpg"
+  },
+  {
+    "product_status": "available",
+    "productId": 1983721,
+    "productName": "aroma milk",
+    "misc": "10 % offer on 3 liters",
+    "max_quantity": "10",
+    "min_range": "0.25",
+    "quantity_unit": "liter",
+    "price_per_unit": "21.00",
+    "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+    "category": "dairy_products",
+    "productImage": "img/featured/feature-5.jpg"
+  },
+  {
+    "product_status": "available",
+    "productId": 9755491,
+    "productName": "Brinjal",
+    "misc": "Limeted product_status available",
+    "max_quantity": "20",
+    "min_range": "0.5",
+    "quantity_unit": "kilograms",
+    "price_per_unit": "16.00",
+    "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
+    "category": "vegetables",
+    "productImage": "img/featured/feature-6.jpg"
   }
 ]

@@ -62,7 +62,7 @@
                 <li class=""><a href="./index.html">Home</a></li>
                 <li class=""><a href="./shoping-cart.html">Cart</a></li>
                 <li class=""><a href="#">My Profile</a></li>
-                <li class="active"><a href="./shop-details.html">Product Detail</a></li>
+                <!-- <li class="active"><a href="./shop-details.html">Product Detail</a></li> -->
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -123,8 +123,10 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <!-- <a href="./index.html"><img src="img/logo.png" alt=""></a> -->
-                        <h3>THRILLS</h3>
+                        <a href="./index.html">
+                            <img src="img/YourLogo.png" alt="">
+                        </a>
+                        <!-- <h3>THRILLS</h3> -->
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -133,7 +135,7 @@
                             <li><a href="./index.html">Home</a></li>
                             <li class=""><a href="./shoping-cart.html">Cart</a></li>
                             <li class=""><a href="#">My Profile</a></li>
-                            <li class="active"><a href="./shop-details.html">Product Detail</a></li>
+                            <!-- <li class="active"><a href="./shop-details.html">Product Detail</a></li> -->
                             <!-- <li class="active"><a href="./shop-grid.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -285,9 +287,9 @@
                         <a href="#" class="primary-btn">ADD TO CARD</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
-                            <li><b>Availability</b> <span>In Stock</span></li>
+                            <li><b>Availability</b> <span class="p-availability">In Stock</span></li>
                             <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
-                            <li><b>Weight</b> <span>0.5 kg</span></li>
+                            <li><b>Weight</b> <span class="p-weight">0.5 kg</span></li>
                             <!-- <li><b>Share on</b>
                                 <div class="share">
                                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -539,7 +541,19 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        let productDetail = JSON.parse(localStorage.getItem('productDetails'));
+        console.log(productDetail);
+        let parentEle = $('.product-details');
+        $('.product-details').attr('id',productDetail.productID);
+        $('.product__details__pic__item--large').attr('src',productDetail.productImage);
+        $('.product__details__text h3').text(productDetail.productName);
+        $('.product__details__price').text('$'+productDetail.productPrice);
+        $('.product__details__text p').text(productDetail.productDesc);
+        $('.p-weight').text(productDetail.productWeight);
+        $('.p-availability').text(productDetail.productStatus === "available" ? "In Stock" : "Out of Stock")
 
+    </script>
 </body>
 
 </html>
