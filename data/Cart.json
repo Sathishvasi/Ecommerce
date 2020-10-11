@@ -2,7 +2,10 @@
   "code": 0,
   "desc": "success",
   "message": "success",
-  "data": [
+
+  "data": {
+    "tax": 10,
+    "products" : [
     {
       "misc": "10 % offer on 3 liters",
       "category": "dairy_products",
@@ -14,7 +17,8 @@
       "quantity_unit": "liter",
       "price_per_unit": "21.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-1.jpg"
+      "product_image": "img/featured/feature-1.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "10 % offer on 1 liters",
@@ -27,7 +31,8 @@
       "quantity_unit": "liter",
       "price_per_unit": "24.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-2.jpg"
+      "product_image": "img/featured/feature-2.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "10 % offer on 3 KG",
@@ -40,7 +45,8 @@
       "quantity_unit": "kilograms",
       "price_per_unit": "40.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-3.jpg"
+      "product_image": "img/featured/feature-3.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "Limeted product_status available",
@@ -53,7 +59,8 @@
       "quantity_unit": "kilograms",
       "price_per_unit": "16.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
-      "product_image": "img/featured/feature-4.jpg"
+      "product_image": "img/featured/feature-4.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "10 % offer on 3 liters",
@@ -66,7 +73,8 @@
       "quantity_unit": "liter",
       "price_per_unit": "21.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-5.jpg"
+      "product_image": "img/featured/feature-5.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "Limeted product_status available",
@@ -79,7 +87,8 @@
       "quantity_unit": "kilograms",
       "price_per_unit": "16.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
-      "product_image": "img/featured/feature-6.jpg"
+      "product_image": "img/featured/feature-6.jpg",
+      "selected_quantity": "1"
     }
-  ]
+  ]}
 }

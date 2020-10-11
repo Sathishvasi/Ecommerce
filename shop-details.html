@@ -288,7 +288,7 @@
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>Availability</b> <span class="p-availability">In Stock</span></li>
-                            <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>
+                            <li><b>Shipping</b> <span>01 day shipping.</span></li>
                             <li><b>Weight</b> <span class="p-weight">0.5 kg</span></li>
                             <!-- <li><b>Share on</b>
                                 <div class="share">
@@ -551,7 +551,10 @@
         $('.product__details__price').text('$'+productDetail.productPrice);
         $('.product__details__text p').text(productDetail.productDesc);
         $('.p-weight').text(productDetail.productWeight);
-        $('.p-availability').text(productDetail.productStatus === "available" ? "In Stock" : "Out of Stock")
+        $('.p-availability').text(productDetail.productStatus === "available" ? "In Stock" : "Out of Stock");
+
+        $(".loader").fadeOut();
+        $("#preloder").delay(200).fadeOut("slow");
 
     </script>
 </body>

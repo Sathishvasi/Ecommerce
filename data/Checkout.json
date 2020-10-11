@@ -1,0 +1,25 @@
+{
+  "code": 0,
+  "desc": "success",
+  "message": "success",
+
+  "data": {
+    "catagories": [
+      {
+        "name": "Vegetable’s Package",
+        "price": 100
+      },
+      {
+        "name": "Fresh Vegetable",
+        "price": 50
+      },
+      {
+        "name": "Organic Bananas",
+        "price": 150
+      }
+    ],
+    "subTotal": 300,
+    "tax": 10,
+    "total": 310
+  }
+}

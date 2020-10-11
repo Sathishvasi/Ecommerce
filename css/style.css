@@ -1929,11 +1929,14 @@ ol {
 .shoping__cart__table table tbody tr td.shoping__cart__item img {
 	display: inline-block;
 	margin-right: 25px;
+	width: 150px;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item h5 {
 	color: #1c1c1c;
 	display: inline-block;
+	text-align: center;
+	text-transform: capitalize;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__price {
@@ -2239,18 +2242,28 @@ ol {
 	float: right;
 }
 
-.checkout__order .checkout__order__subtotal {
+.checkout__order .checkout__order__subtotal, .checkout__order .checkout__order__tax {
 	font-size: 18px;
 	color: #1c1c1c;
 	font-weight: 700;
-	border-bottom: 1px solid #e1e1e1;
-	border-top: 1px solid #e1e1e1;
+	
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 	padding-top: 15px;
 }
 
-.checkout__order .checkout__order__subtotal span {
+.checkout__order .checkout__order__subtotal{
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 0;
+}
+
+.checkout__order .checkout__order__tax{
+	border-bottom: 1px solid #e1e1e1;
+
+}
+
+.checkout__order .checkout__order__subtotal span, .checkout__order .checkout__order__tax span {
 	float: right;
 }
 
@@ -3433,6 +3446,16 @@ ol {
 	}
 }
 
+/* Mobile  */
+@media only screen and (max-width: 768px) {
+	.shoping__cart__table table tbody tr td.shoping__cart__item h5{
+		width: 100%;
+		margin-top: 10px;
+	}
+	.shoping__cart__table table tbody tr td.shoping__cart__item{
+		width: 275px;
+	}
+}
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
@@ -3480,4 +3503,8 @@ ol {
 	.blog__details__hero__text h2 {
 		font-size: 24px;
 	}
+}
+
+.shoping__cart__btns{
+	text-align: right;
 }

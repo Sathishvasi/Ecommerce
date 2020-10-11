@@ -31,7 +31,18 @@
             }
         }
 
-        return check;
+        if(check){
+            let un = $("input[name='username']").val();
+            let pwd = $("input[name='pass']").val()
+            if(un === 'sathish' && pwd === '123'){
+                location.href = "./index.html";
+                return false;
+            }else{
+                return false;
+            }
+        }else{
+            return check;
+        }
     });
 
 
