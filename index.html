@@ -678,46 +678,96 @@
         productCategory,
         categoryArray = [];
 
-      $.get("https://thrills-mode.herokuapp.com/product/details/get", function (response, status) {
-        // console.log("Data: ", data);
-        let data = response.data;
-        data.forEach((val, index) => {
-          productCategory = formatSpace(val.category);
-          products += `<div class="col-lg-3 col-md-4 col-sm-6 mix ${formatSpace(val.product_name)} ${productCategory}" id="${val.product_id}">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${val.productImage}" style="background-image: url(${val.product_image});" data-id="${val.product_id}" data-title="${val.product_name}" data-img="${val.product_image}" data-desc="${val.prod_desc}" data-price="${val.price_per_unit}" data-status="${val.product_status}" data-weight="${val.min_range} ${val.quantity_unit}" data-quantity="${val.max_quantity}">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">${val.product_name}</a></h6>
-                            <h5>$${val.price_per_unit}</h5>
-                        </div>
-                    </div>
-                </div>`;
-          if (!categoryArray.includes(productCategory)) {
-            categoryArray.push(productCategory);
-          }
-        });
+      $.ajax({
+        type:'GET',
+        url:"https://thrills-mode.herokuapp.com/product/details/get",
+        // contentType:"application/json",
+        // dataType:'jsonp',
+        crossDomain:true,
+        success:function(response) {
+          let data = response.data;
+          data.forEach((val, index) => {
+            productCategory = formatSpace(val.category);
+            products += `<div class="col-lg-3 col-md-4 col-sm-6 mix ${formatSpace(val.product_name)} ${productCategory}" id="${val.product_id}">
+                      <div class="featured__item">
+                          <div class="featured__item__pic set-bg" data-setbg="${val.productImage}" style="background-image: url(${val.product_image});" data-id="${val.product_id}" data-title="${val.product_name}" data-img="${val.product_image}" data-desc="${val.prod_desc}" data-price="${val.price_per_unit}" data-status="${val.product_status}" data-weight="${val.min_range} ${val.quantity_unit}" data-quantity="${val.max_quantity}">
+                              <ul class="featured__item__pic__hover">
+                                  <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                  <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                              </ul>
+                          </div>
+                          <div class="featured__item__text">
+                              <h6><a href="#">${val.product_name}</a></h6>
+                              <h5>$${val.price_per_unit}</h5>
+                          </div>
+                      </div>
+                  </div>`;
+            if (!categoryArray.includes(productCategory)) {
+              categoryArray.push(productCategory);
+            }
+          });
 
-        // category append
-        categoryArray.forEach((val,index)=>{
-            $('.featured__controls ul').append(`<li data-filter=".${val}">${formatSpace(val)}</li>`);
-        });
+          // category append
+          categoryArray.forEach((val,index)=>{
+              $('.featured__controls ul').append(`<li data-filter=".${val}">${formatSpace(val)}</li>`);
+          });
 
-        // Product append
-        $('.featured__filter').append(products);
+          // Product append
+          $('.featured__filter').append(products);
 
-        // Plugin initialisation
-        var containerEl = document.querySelector('.featured__filter');
-        mixitup(containerEl);
+          // Plugin initialisation
+          var containerEl = document.querySelector('.featured__filter');
+          mixitup(containerEl);
 
-        //Enable loader
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+          //Enable loader
+          $(".loader").fadeOut();
+          $("#preloder").delay(200).fadeOut("slow");
+        },
+        error: function(err) {
+          console.log(err);
+        }
       });
+
+      // $.get("https://thrills-mode.herokuapp.com/product/details/get", function (response, status) {
+      //   // console.log("Data: ", data);
+      //   let data = response.data;
+      //   data.forEach((val, index) => {
+      //     productCategory = formatSpace(val.category);
+      //     products += `<div class="col-lg-3 col-md-4 col-sm-6 mix ${formatSpace(val.product_name)} ${productCategory}" id="${val.product_id}">
+      //               <div class="featured__item">
+      //                   <div class="featured__item__pic set-bg" data-setbg="${val.productImage}" style="background-image: url(${val.product_image});" data-id="${val.product_id}" data-title="${val.product_name}" data-img="${val.product_image}" data-desc="${val.prod_desc}" data-price="${val.price_per_unit}" data-status="${val.product_status}" data-weight="${val.min_range} ${val.quantity_unit}" data-quantity="${val.max_quantity}">
+      //                       <ul class="featured__item__pic__hover">
+      //                           <li><a href="#"><i class="fa fa-heart"></i></a></li>
+      //                           <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+      //                       </ul>
+      //                   </div>
+      //                   <div class="featured__item__text">
+      //                       <h6><a href="#">${val.product_name}</a></h6>
+      //                       <h5>$${val.price_per_unit}</h5>
+      //                   </div>
+      //               </div>
+      //           </div>`;
+      //     if (!categoryArray.includes(productCategory)) {
+      //       categoryArray.push(productCategory);
+      //     }
+      //   });
+
+      //   // category append
+      //   categoryArray.forEach((val,index)=>{
+      //       $('.featured__controls ul').append(`<li data-filter=".${val}">${formatSpace(val)}</li>`);
+      //   });
+
+      //   // Product append
+      //   $('.featured__filter').append(products);
+
+      //   // Plugin initialisation
+      //   var containerEl = document.querySelector('.featured__filter');
+      //   mixitup(containerEl);
+
+      //   //Enable loader
+      //   $(".loader").fadeOut();
+      //   $("#preloder").delay(200).fadeOut("slow");
+      // });
     </script>
   </body>
 </html>
