@@ -678,6 +678,18 @@
         productCategory,
         categoryArray = [];
 
+      $.ajax({
+          url: "https://thrills-mode.herokuapp.com/product/details/get",
+          type: "GET",
+          beforeSend: function(xhr){xhr.setRequestHeader('Access-Control-Allow-Origin', '*')},
+          success: function( response ) {
+              console.log( response ); // server response
+          },
+          error: function(err) {
+            console.log(err);
+          }
+      });
+
       $.get("https://thrills-mode.herokuapp.com/product/details/get", function (response, status) {
         // console.log("Data: ", data);
         let data = response.data;
