@@ -458,7 +458,7 @@
             <h4>Your Order ID: #7251936</h4>
             <h4>Total: Rs.423.00</h4>
 
-            <img src="/img/cart-success.jpg" alt="">
+            <img src="./img/cart-success.jpg" alt="">
 
             <h3>Pay to this UPI - 123@okicici.com</h3>
         </div>
@@ -475,7 +475,7 @@
     <script src="js/main.js"></script>
 
     <script>
-        $.get("/data/Checkout.json", function (response, status) {
+        $.get("./data/Checkout.json", function (response, status) {
             // console.log("Data: ", data);
             let data = response.data;
             let products = '';
