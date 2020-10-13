@@ -245,7 +245,7 @@
         let inputVal = $('.trigger-search').siblings('input').val();
         if(inputVal != ''){
             localStorage.setItem("searchKey",inputVal);
-            location.href = "/result.html";
+            location.href = "./result.html";
         }
     })
 
