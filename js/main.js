@@ -100,17 +100,17 @@
     /*--------------------------
         Latest Product Slider
     ----------------------------*/
-    $(".latest-product__slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: false,
-        nav: true,
-        navText: ["<span class='fa fa-angle-left'><span/>", "<span class='fa fa-angle-right'><span/>"],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true
-    });
+    // $(".latest-product__slider").owlCarousel({
+    //     loop: true,
+    //     margin: 0,
+    //     items: 1,
+    //     dots: false,
+    //     nav: true,
+    //     navText: ["<span class='fa fa-angle-left'><span/>", "<span class='fa fa-angle-right'><span/>"],
+    //     smartSpeed: 1200,
+    //     autoHeight: false,
+    //     autoplay: true
+    // });
 
     /*-----------------------------
         Product Discount Slider
@@ -240,6 +240,19 @@
         localStorage.setItem('productDetails',JSON.stringify(productDetails));
         location.href="shop-details.html";
     });
+
+    $('.trigger-search').on('click', function(){
+        let inputVal = $('.trigger-search').siblings('input').val();
+        if(inputVal != ''){
+            localStorage.setItem("searchKey",inputVal);
+            location.href = "/result.html";
+        }
+    })
+
+    $(document).on('click','.fa-user', function(){
+        $('.login-dropdown').toggleClass('addFlex');
+    });
+
 })(jQuery);
 
 function formatSpace(str){

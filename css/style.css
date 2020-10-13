@@ -958,8 +958,8 @@ ol {
 -----------------------*/
 
 .latest-product {
-	padding-top: 80px;
-	padding-bottom: 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .latest-product__text h4 {
@@ -2640,6 +2640,8 @@ ol {
 	background: #F3F6FA;
 	padding-top: 70px;
 	padding-bottom: 0;
+	position: absolute;
+    width: 100%;
 }
 
 .footer__about {
@@ -2664,6 +2666,10 @@ ol {
 .footer__widget {
 	margin-bottom: 30px;
 	overflow: hidden;
+}
+
+.footer__widget ul {
+    display: none;
 }
 
 .footer__widget h6 {
@@ -2719,6 +2725,15 @@ ol {
 	height: 100%;
 }
 
+.footer__widget__social{
+	margin-top: 2rem;
+}
+
+.page-header{
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
 .footer__widget .footer__widget__social a {
 	display: inline-block;
 	height: 41px;
@@ -2760,10 +2775,13 @@ ol {
 	color: #1c1c1c;
 	float: left;
 	line-height: 25px;
+	width: 100%;
+	text-align: center;
 }
 
 .footer__copyright__payment {
 	float: right;
+	display: none;
 }
 
 /*---------------------
@@ -3228,6 +3246,8 @@ ol {
 	.footer__copyright__text {
 		float: none;
 		margin-bottom: 25px;
+		width: 100%;
+		text-align: center;
 	}
 	.footer__copyright__payment {
 		float: none;
@@ -3507,4 +3527,73 @@ ol {
 
 .shoping__cart__btns{
 	text-align: right;
+}
+
+.login-dropdown{
+	display: none;
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	position: absolute;
+	background: white;
+	border: 1px solid #b5b5b5;
+	border-radius: 5px;
+	padding: 2px 15px;
+	bottom: -20px;
+}
+
+.login-dropdown a{
+	color: black;
+	padding: 5px 0;
+}
+
+.login-dropdown a:first-child{
+	border-bottom: 1px solid #b5b5b5;
+}
+
+.addFlex{
+	display: flex;
+}
+
+.thankyou-wrapper{
+	position: fixed;
+    background: black;
+    height: 100vh;
+    width: 100%;
+	top: 0;
+	display: none;
+}
+
+.thankyou-wrapper i{
+	width: 97%;
+    font-size: 50px;
+    font-weight: 300;
+    font-style: normal;
+    text-align: right;
+    cursor: pointer;
+    display: block;
+    margin-top: 2rem;
+}
+
+.thankyou-wrapper i, .thankyou-content *{
+	color: #cecece;
+}
+
+.thankyou-content{
+	text-align: center;
+}
+
+.thankyou-content h4{
+	margin-top: 2rem;
+}
+
+.thankyou-content img{
+	width: 175px;
+    margin-top: 1rem;
+}
+
+.thankyou-content h3{
+	margin-top: 3rem;
+    color: #4CAF50;
 }

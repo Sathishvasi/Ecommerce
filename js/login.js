@@ -35,6 +35,7 @@
             let un = $("input[name='username']").val();
             let pwd = $("input[name='pass']").val()
             if(un === 'sathish' && pwd === '123'){
+                localStorage.setItem('loginStatus','true');
                 location.href = "./index.html";
                 return false;
             }else{
