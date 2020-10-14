@@ -345,9 +345,9 @@
                                     <li>Fresh Vegetable <span>$151.99</span></li>
                                     <li>Organic Bananas <span>$53.99</span></li> -->
                                 </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div>
-                                <div class="checkout__order__tax">Tax <span>$750.99</span></div>
-                                <div class="checkout__order__total">Total <span>$750.99</span></div>
+                                <div class="checkout__order__subtotal">Subtotal <span>Rs. 750.99</span></div>
+                                <div class="checkout__order__tax">Tax <span>Rs. 750.99</span></div>
+                                <div class="checkout__order__total">Total <span>Rs. 750.99</span></div>
                                 <!-- <div class="checkout__input__checkbox">
                                     <label for="acc-or">
                                         Create an account?
@@ -482,13 +482,13 @@
             console.log(data);
 
             data.catagories.forEach(function(val,index){
-                products+= `<li>${val.name}<span>$${val.price}.00</span></li>`
+                products+= `<li>${val.name}<span>Rs. ${val.price}.00</span></li>`
                 // console.log(val)
             })
             $('.purchased__products').append(products);
-            $('.checkout__order__subtotal span').text("$"+data.subTotal+".00");
-            $('.checkout__order__tax span').text("$"+data.tax+".00");
-            $('.checkout__order__total span').text("$"+data.total+".00");
+            $('.checkout__order__subtotal span').text("Rs. "+data.subTotal+".00");
+            $('.checkout__order__tax span').text("Rs. "+data.tax+".00");
+            $('.checkout__order__total span').text("Rs. "+data.total+".00");
 
 
             //Enable loader
