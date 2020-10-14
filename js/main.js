@@ -52,10 +52,10 @@
     /*------------------
 		Navigation
 	--------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
-    });
+    // $(".mobile-menu").slicknav({
+    //     prependTo: '#mobile-menu-wrap',
+    //     allowParentLinks: true
+    // });
 
     /*-----------------------
         Categories Slider
@@ -257,4 +257,10 @@
 
 function formatSpace(str){
     return str.replace(/[^\w\s]/gi, '');
+}
+
+function showSnackBar(text){
+    $('#snackbar').text(text);
+    $('#snackbar').addClass('show');
+    setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
 }

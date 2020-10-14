@@ -2,7 +2,6 @@
 (function ($) {
     "use strict";
 
-
     /*==================================================================
     [ Focus input ]*/
     $('.input100').each(function(){
@@ -21,7 +20,9 @@
     [ Validate ]*/
     var input = $('.validate-input .input100');
 
-    $('.validate-form').on('submit',function(){
+    $('.validate-form').on('submit',function(e){
+        e.preventDefault();
+
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -39,7 +40,8 @@
                 location.href = "./index.html";
                 return false;
             }else{
-                return false;
+                showSnackBar('Invalid Credentials');
+                // return false;
             }
         }else{
             return check;

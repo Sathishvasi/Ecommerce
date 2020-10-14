@@ -294,7 +294,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <a href="#" class="primary-btn add-cart">ADD TO CARD</a>
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>Availability</b> <span class="p-availability">In Stock</span></li>
@@ -541,6 +541,8 @@
     </footer>
     <!-- Footer Section End -->
 
+    <div id="snackbar"></div>
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -571,6 +573,15 @@
             $('.header__cart ul li:last-child>a').attr('href','#');
         }
 
+        $(document).on('click','.add-cart', function(e){
+            e.preventDefault();
+            showSnackBar('Selected Product added to Cart')
+        });
+
+        $(document).on('click','.heart-icon', function(e){
+            e.preventDefault();
+            showSnackBar('Product added to favourites')
+        });
     </script>
 </body>
 
