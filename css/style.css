@@ -3559,7 +3559,8 @@ ol {
 .thankyou-wrapper{
 	position: fixed;
     background: black;
-    height: 100vh;
+	height: 100%;
+	overflow-y: scroll;
     width: 100%;
 	top: 0;
 	display: none;
@@ -3582,6 +3583,8 @@ ol {
 
 .thankyou-content{
 	text-align: center;
+	padding: 0 10px;
+	margin-bottom: 3rem;
 }
 
 .thankyou-content h4{
