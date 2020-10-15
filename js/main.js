@@ -61,7 +61,7 @@
         Categories Slider
     ------------------------*/
     $(".categories__slider").owlCarousel({
-        loop: true,
+        // loop: true,
         margin: 0,
         items: 4,
         dots: false,
@@ -71,11 +71,11 @@
         animateIn: 'fadeIn',
         smartSpeed: 1200,
         autoHeight: false,
-        autoplay: true,
+        // autoplay: true,
         responsive: {
 
             0: {
-                items: 1,
+                items: 2,
             },
 
             480: {

@@ -268,39 +268,44 @@
     <!-- Hero Section End -->
 
     <!-- Categories Section Begin -->
-    <!-- <section class="categories">
+    <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
+                            <div class="category-border active"></div>
+                            <h5><a href="#">Thrills Fresh</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
+                        <div class="categories__item set-bg" data-setbg="img/categories/cat-6.jpg">
+                          <div class="category-border"></div>
+                            <h5><a href="#">Diwali  Offers</a></h5>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <!-- <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
+                          <div class="category-border"></div>  
+                          <h5><a href="#">New Year Offers</a></h5>
                         </div>
+                    </div> -->
+                    <div class="col-lg-3">
+                      <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
+                        <div class="category-border"></div>  
+                        <h5><a href="#">Dried Fruits</a></h5>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
+                        <div class="category-border"></div>  
+                        <h5><a href="#">Fresh Fruit</a></h5>
+                      </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- Categories Section End -->
 
     <!-- Featured Section Begin -->
@@ -309,7 +314,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="section-title">
-              <h2>Available Products</h2>
+              <h2>Thrils Fresh</h2>
             </div>
             <div class="featured__controls">
               <ul>
@@ -732,47 +737,65 @@
       //       console.log(err);
       //     }
       // });
+      renderProducts("./data/Product.json");
 
-      $.get("./data/Product.json", function (response, status) {
-        // console.log("Data: ", data);
-        let data = response.data;
-        data.forEach((val, index) => {
-          productCategory = formatSpace(val.category);
-          products += `<div class="col-lg-3 col-md-4 col-sm-6 mix ${formatSpace(val.product_name)} ${productCategory}" id="${val.product_id}">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" style="background-image: url(${val.product_image === '' ? 'img/placeholder.png': val.product_image});" data-id="${val.product_id}" data-title="${val.product_name}" data-img="${val.product_image === '' ? 'img/placeholder.png': val.product_image}" data-desc="${val.prod_desc}" data-price="${val.price_per_unit}" data-status="${val.product_status}" data-weight="${val.min_range} ${val.quantity_unit}" data-quantity="${val.max_quantity}">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#" class="add-fav"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#" class="add-cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">${val.product_name}</a></h6>
-                            <h5>Rs.${val.price_per_unit}</h5>
-                        </div>
-                    </div>
-                </div>`;
-          if (!categoryArray.includes(productCategory)) {
-            categoryArray.push(productCategory);
-          }
+      function renderProducts(url){
+
+        $("#preloder").show();
+        $(".loader").show();
+
+        $('.featured__filter').children().remove();        
+        $('.featured__controls ul').children().remove();
+        $('.featured__controls ul').append(`<li class="active" data-filter="*">All</li>`);
+
+
+        $.get(url, function (response, status) {
+          // console.log("Data: ", data);
+          products = "";
+          categoryArray = [];
+          let data = response.data;
+          data.forEach((val, index) => {
+            productCategory = formatSpace(val.category);
+            products += `<div class="col-lg-3 col-md-4 col-sm-6 mix ${formatSpace(val.product_name)} ${productCategory}" id="${val.product_id}">
+                      <div class="featured__item">
+                          <div class="featured__item__pic set-bg" style="background-image: url(${val.product_image === '' ? 'img/placeholder.png': val.product_image});" data-id="${val.product_id}" data-title="${val.product_name}" data-img="${val.product_image === '' ? 'img/placeholder.png': val.product_image}" data-desc="${val.prod_desc}" data-price="${val.price_per_unit}" data-status="${val.product_status}" data-weight="${val.min_range} ${val.quantity_unit}" data-quantity="${val.max_quantity}">
+                              <ul class="featured__item__pic__hover">
+                                  <li><a href="#" class="add-fav"><i class="fa fa-heart"></i></a></li>
+                                  <li><a href="#" class="add-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                              </ul>
+                          </div>
+                          <div class="featured__item__text">
+                              <h6><a href="#">${val.product_name}</a></h6>
+                              <h5>Rs.${val.price_per_unit}</h5>
+                          </div>
+                      </div>
+                  </div>`;
+            if (!categoryArray.includes(productCategory)) {
+              categoryArray.push(productCategory);
+            }
+          });
+
+          // category append
+          categoryArray.forEach((val,index)=>{
+              $('.featured__controls ul').append(`<li data-filter=".${val}">${formatSpace(val)}</li>`);
+          });
+
+          // Product append
+          $('.featured__filter').append(products);
+
+          // Plugin initialisation
+          var containerEl = $('.featured__filter');
+          let randomID = 'MixItUp'+Math.floor(200000 + Math.random() * 30000);
+
+          $(containerEl).attr('id',randomID);
+          mixitup(containerEl);
+
+          //Enable loader
+          $(".loader").fadeOut();
+          $("#preloder").delay(200).fadeOut("slow");
         });
-
-        // category append
-        categoryArray.forEach((val,index)=>{
-            $('.featured__controls ul').append(`<li data-filter=".${val}">${formatSpace(val)}</li>`);
-        });
-
-        // Product append
-        $('.featured__filter').append(products);
-
-        // Plugin initialisation
-        var containerEl = document.querySelector('.featured__filter');
-        mixitup(containerEl);
-
-        //Enable loader
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-      });
+      
+      }
 
       // Banner carousel
       $(".banner-carousel").owlCarousel({
@@ -804,6 +827,21 @@
         showSnackBar('Selected Product added to Cart')
       });
       
+      localStorage.setItem('checkItem','Product');
+
+      $(document).on('click','.categories__item .category-border',function(){
+          $('.categories__item .category-border').removeClass('active')
+          $(this).addClass('active');
+
+          // Change title
+          $('.section-title h2').text($(this).siblings().find('a').text());
+
+          
+          let jsonFile = localStorage.getItem('checkItem') === 'Product' ? 'Product2' : 'Product';
+          localStorage.setItem('checkItem',jsonFile);
+
+          renderProducts("./data/"+jsonFile+".json");
+      })
     </script>
   </body>
 </html>
