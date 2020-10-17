@@ -633,20 +633,22 @@
         e.preventDefault();
         let inputVal = parseInt($("#wallet-input").val());
         let existingVal = parseInt($("p.walletVal").text());
+        let existingWalletVal = parseInt($(".cart_wallet").text().replace("Rs.", "").replace("-", ""));
         let difference = existingVal - inputVal;
         if (inputVal > 0 && difference > 0) {
           showSnackBar("Wallet amount redeemed successfully");
           //update wallet value in total section
-          $(".cart_wallet").text("- Rs." + (inputVal) + ".00");
+          $(".cart_wallet").text("- Rs." + (inputVal+existingWalletVal) + ".00");
           //clearing wallet input
           $("#wallet-input").val("");
           //update wallet values
           $('.walletVal').text(difference);
           //update primary total
-          let walletVal = parseInt($(".cart_wallet").text().replace("- Rs.", ""));
-          let totalVal = parseInt($(".cart_total").text().replace("Rs.", ""));
+          let walletVal = parseInt($(".cart_wallet").text().replace("Rs.", "").replace("-", ""));
+          let subTotal = parseInt($(".cart_sub-total").text().replace("Rs.", ""));
+          let taxVal = parseInt($(".cart_tax").text().replace("Rs.", ""));
 
-          $(".cart_total").text("Rs." + (totalVal - walletVal) + ".00");
+          $(".cart_total").text("Rs." + ((taxVal+subTotal) - walletVal) + ".00");
         } else {
           showSnackBar("Insufficient money from wallet");
         }
