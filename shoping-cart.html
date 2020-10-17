@@ -648,7 +648,7 @@
           let subTotal = parseInt($(".cart_sub-total").text().replace("Rs.", ""));
           let taxVal = parseInt($(".cart_tax").text().replace("Rs.", ""));
 
-          $(".cart_total").text("Rs." + ((taxVal+subTotal) - walletVal) + ".00");
+          $(".cart_total").text("Rs." + math.abs((taxVal+subTotal) - walletVal) + ".00");
         } else {
           showSnackBar("Insufficient money from wallet");
         }
