@@ -541,10 +541,59 @@ ol {
 	right: -12px;
 }
 
+/* .wallet-use h5{
+    width: 50%;
+    display: inline-block;
+}
+
+.wallet-use .site-btn{
+	letter-spacing: 4px;
+} */
+
+.wallet-use form button.active{
+    background: #7fad39;
+}
+
+.wallet-use h5{
+	margin-bottom: 0px !important;
+}
+
+.walletVal {
+    display: inline !important;
+}
+
+.wallet-use span{
+	margin: 6px 0 15px 0;
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
 .header__cart .header__cart__price {
 	font-size: 14px;
 	color: #6f6f6f;
+	/* display: inline-block; */
+	display: none;
+}
+
+.header__cart .wallet-container{
 	display: inline-block;
+	position: relative;
+	transform: translateY(-8px);
+}
+
+.header__cart .wallet-container img{
+	width: 50px;
+}
+
+.header__cart .wallet-container p{
+	font-weight: bold;
+    color: #004277;
+    position: absolute;
+    top: 18px;
+    left: 9px;
+    margin: 0;
+    font-size: 15px;
 }
 
 .header__cart .header__cart__price span {
@@ -3407,7 +3456,16 @@ ol {
 		margin-right: 20px;
 	}
 	.humberger__menu__nav {
-		display: none;
+		margin: 40px 0;
+	}
+	.humberger__menu__nav ul{
+		list-style-type: none;
+	}
+	.humberger__menu__nav ul li {
+		margin-bottom: 20px;
+	}
+	.humberger__menu__nav ul li a {
+		color: black;
 	}
 	.humberger__menu__wrapper .header__top__right__social {
 		display: block;

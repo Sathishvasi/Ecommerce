@@ -1,143 +1,152 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ecommerce site">
-    <meta name="keywords" content="Ecommerce, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Ecommerce site" />
+    <meta name="keywords" content="Ecommerce, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>THRILS | Cart</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
 
-<body>
+  <body>
     <!-- Page Preloder -->
     <div id="preloder">
-        <div class="loader"></div>
+      <div class="loader"></div>
     </div>
 
     <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <!-- <a href="#"><img src="img/logo.png" alt=""></a> -->
-            <h3>THRILS</h3>
+      <div class="humberger__menu__logo">
+        <!-- <a href="#"><img src="img/logo.png" alt=""></a> -->
+        <h3>THRILS</h3>
+      </div>
+      <div class="humberger__menu__cart">
+        <ul>
+          <li></li>
+          <li>
+            <a href="heart.html"><i class="fa fa-heart"></i> <span>3</span></a>
+          </li>
+          <li>
+            <a href="./shoping-cart.html"
+              ><i class="fa fa-shopping-cart"></i> <span>3</span></a
+            >
+          </li>
+        </ul>
+        <div class="header__cart__price">
+          Total Cost: <span>Rs. 150.00</span>
         </div>
-        <div class="humberger__menu__cart">
-            <ul>
-                <li></li>
-                <li><a href="heart.html"><i class="fa fa-heart"></i> <span>3</span></a></li>
-<li><a href="./shoping-cart.html"><i class="fa fa-shopping-cart"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>Rs. 150.00</span></div>
+      </div>
+      <div class="humberger__menu__widget">
+        <div class="header__top__right__language">
+          <img src="img/language.png" alt="" />
+          <div>English</div>
+          <span class="arrow_carrot-down"></span>
+          <ul>
+            <li><a href="#">Spanis</a></li>
+            <li><a href="#">English</a></li>
+          </ul>
         </div>
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="img/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
-            <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-sign-in"></i> Login</a>
-            </div>
+        <div class="header__top__right__auth">
+          <a href="#"><i class="fa fa-sign-in"></i> Login</a>
         </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul>
-                <li class=""><a href="./index.html">Home</a></li>
-                <li class="active"><a href="./shoping-cart.html">Cart</a></li>
-                <li class=""><a href="./heart.html">Favourites</a></li>
-                
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> hello@ecommerce.com</li>
-                <li></li>
-            </ul>
-        </div>
+      </div>
+      <nav class="humberger__menu__nav mobile-menu">
+        <ul>
+          <li class=""><a href="./index.html">Home</a></li>
+          <li class="active"><a href="./shoping-cart.html">Cart</a></li>
+          <li class=""><a href="./heart.html">Favourites</a></li>
+        </ul>
+      </nav>
+      <div id="mobile-menu-wrap"></div>
+      <div class="header__top__right__social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+      </div>
+      <div class="humberger__menu__contact">
+        <ul>
+          <li><i class="fa fa-envelope"></i> hello@ecommerce.com</li>
+          <li></li>
+        </ul>
+      </div>
     </div>
     <!-- Humberger End -->
 
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@ecommerce.com</li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-sign-in"></i> Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="header__top">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index.html">
-                            <img src="img/YourLogo.png" alt="">
-                        </a>
-                        <!-- <h3>THRILS</h3> -->
-                    </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="header__top__left">
+                <ul>
+                  <li><i class="fa fa-envelope"></i> hello@ecommerce.com</li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="header__top__right">
+                <div class="header__top__right__social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="#"><i class="fa fa-pinterest-p"></i></a>
                 </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li class="active"><a href="./shoping-cart.html">Cart</a></li>
-                            <li class=""><a href="./heart.html">Favourites</a></li>
-                            
-                            <!-- <li class="active"><a href="./shop-grid.html">Shop</a></li>
+                <div class="header__top__right__language">
+                  <img src="img/language.png" alt="" />
+                  <div>English</div>
+                  <span class="arrow_carrot-down"></span>
+                  <ul>
+                    <li><a href="#">Spanis</a></li>
+                    <li><a href="#">English</a></li>
+                  </ul>
+                </div>
+                <div class="header__top__right__auth">
+                  <a href="#"><i class="fa fa-sign-in"></i> Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="header__logo">
+              <a href="./index.html">
+                <img src="img/YourLogo.png" alt="" />
+              </a>
+              <!-- <h3>THRILS</h3> -->
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <nav class="header__menu">
+              <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li class="active"><a href="./shoping-cart.html">Cart</a></li>
+                <li class=""><a href="./heart.html">Favourites</a></li>
+
+                <!-- <li class="active"><a href="./shop-grid.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>
@@ -148,39 +157,53 @@
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li> -->
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li></li>
-                            <li><a href="heart.html"><i class="fa fa-heart"></i> <span>3</span></a></li>
-                            <li><a href="./shoping-cart.html"><i class="fa fa-shopping-cart"></i> <span>3</span></a></li>
-                            <li>
-                                <a href="./login.html"><i class="fa fa-sign-in"></i></a>
-                                <div class="login-dropdown">
-                                    <a href="profile.html">My Profile</a>
-                                    <a href="login.html">Logout</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>Rs. 150.00</span></div>
-                    </div>
-                </div>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3">
+            <div class="header__cart">
+              <ul>
+                <li></li>
+                <li>
+                  <a href="heart.html"
+                    ><i class="fa fa-heart"></i> <span>3</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./shoping-cart.html"
+                    ><i class="fa fa-shopping-cart"></i> <span>3</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./login.html"><i class="fa fa-sign-in"></i></a>
+                  <div class="login-dropdown">
+                    <a href="profile.html">My Profile</a>
+                    <a href="login.html">Logout</a>
+                  </div>
+                </li>
+              </ul>
+              <div class="header__cart__price">
+                Total Cost: <span>Rs. 150.00</span>
+              </div>
+              <div class="wallet-container">
+                <img src="./img/wallet.png" alt="" />
+                <p class="walletVal">250</p>
+              </div>
             </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
+          </div>
         </div>
+        <div class="humberger__open">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
     </header>
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
     <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="col-lg-3">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col-lg-3">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
@@ -201,70 +224,72 @@
                         </ul>
                     </div>
                 </div> -->
-                <div class="col-lg-12">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#" onsubmit="return false;">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn trigger-search">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-lg-12">
+            <div class="hero__search">
+              <div class="hero__search__form">
+                <form action="#" onsubmit="return false;">
+                  <div class="hero__search__categories">
+                    All Categories
+                    <span class="arrow_carrot-down"></span>
+                  </div>
+                  <input type="text" placeholder="What do yo u need?" />
+                  <button type="submit" class="site-btn trigger-search">
+                    SEARCH
+                  </button>
+                </form>
+              </div>
+              <div class="hero__search__phone">
+                <div class="hero__search__phone__icon">
+                  <i class="fa fa-phone"></i>
                 </div>
+                <div class="hero__search__phone__text">
+                  <h5>+65 11.188.888</h5>
+                  <span>support 24/7 time</span>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Shopping Cart</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Shopping Cart</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="breadcrumb__text">
+              <h2>Shopping Cart</h2>
+              <div class="breadcrumb__option">
+                <a href="./index.html">Home</a>
+                <span>Shopping Cart</span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- Breadcrumb Section End -->
 
     <!-- Shoping Cart Section Begin -->
     <section class="shoping-cart spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shoping__cart__table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="shoping__product">Products</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- <tr>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="shoping__cart__table">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="shoping__product">Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- <tr>
                                     <td class="shoping__cart__item">
                                         <img src="img/cart/cart-1.jpg" alt="">
                                         <h5>Vegetable’s Package</h5>
@@ -330,113 +355,158 @@
                                         <span class="icon_close"></span>
                                     </td>
                                 </tr> -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                </tbody>
+              </table>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shoping__cart__btns">
-                        <a href="index.html" class="primary-btn">CONTINUE SHOPPING</a>
-                        <!-- <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            Upadate Cart</a> -->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="shoping__continue">
-                        <div class="shoping__discount">
-                            <h5>Discount Codes</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Enter your coupon code">
-                                <button type="submit" class="site-btn">APPLY COUPON</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="shoping__checkout">
-                        <h5>Cart Total</h5>
-                        <ul class="cart-total">
-                            <li>Subtotal <span class="cart_sub-total">$454.98</span></li>
-                            <li>Tax <span class="cart_tax">$454.98</span></li>
-                            <li>Total <span class="cart_total">$454.98</span></li>
-                        </ul>
-                        <a href="checkout.html" class="primary-btn">PROCEED TO CHECKOUT</a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="shoping__cart__btns">
+              <a href="index.html" class="primary-btn">CONTINUE SHOPPING</a>
+              <!-- <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
+                            Upadate Cart</a> -->
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="shoping__continue">
+              <div class="shoping__discount">
+                <h5>Discount Codes</h5>
+                <form action="#">
+                  <input type="text" placeholder="Enter your coupon code" />
+                  <button type="submit" class="site-btn">APPLY COUPON</button>
+                </form>
+              </div>
+            </div>
+            <div class="shoping__continue wallet-use">
+              <div class="shoping__discount">
+                <h5>Redeem your wallet money</h5>
+                <span
+                  >Available wallet money: Rs.<span class="walletVal"
+                    >250</span
+                  ></span
+                >
+                <form class="wallet-form">
+                  <input
+                    type="number"
+                    id="wallet-input"
+                    placeholder="Enter your wallet money"
+                  />
+                  <button type="submit" class="site-btn" disabled="true">
+                    APPLY OFFER
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="shoping__checkout">
+              <h5>Cart Total</h5>
+              <ul class="cart-total">
+                <li>Subtotal <span class="cart_sub-total">Rs.0.00</span></li>
+                <li>Tax <span class="cart_tax">Rs.0.00</span></li>
+                <li>Wallet offer <span class="cart_wallet">Rs.0.00</span></li>
+                <li>
+                  Discount offer <span class="cart_discount">Rs.0.00</span>
+                </li>
+                <li>Total <span class="cart_total">Rs.0.00</span></li>
+              </ul>
+              <a href="checkout.html" class="primary-btn"
+                >PROCEED TO CHECKOUT</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Shoping Cart Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <!-- <a href="./index.html"><img src="img/logo.png" alt=""></a> -->
-                            <h3>THRILS</h3>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 India</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@ecommerce.com</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6></h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top" >
-                            <button type="submit" class="site-btn">Keep in touch with us</button>
-                          </a>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer__about">
+              <div class="footer__about__logo">
+                <!-- <a href="./index.html"><img src="img/logo.png" alt=""></a> -->
+                <h3>THRILS</h3>
+              </div>
+              <ul>
+                <li>Address: 60-49 Road 11378 India</li>
+                <li>Phone: +65 11.188.888</li>
+                <li>Email: hello@ecommerce.com</li>
+              </ul>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to ecommerce can't be removed. site is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
-  <!-- Link back to ecommerce can't be removed. site is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+            <div class="footer__widget">
+              <h6></h6>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">About Our Shop</a></li>
+                <li><a href="#">Secure Shopping</a></li>
+                <li><a href="#">Delivery infomation</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Our Sitemap</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Who We Are</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Innovation</a></li>
+                <li><a href="#">Testimonials</a></li>
+              </ul>
             </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="footer__widget">
+              <h6>Join Our Newsletter Now</h6>
+              <p>
+                Get E-mail updates about our latest shop and special offers.
+              </p>
+              <a
+                href="mailto:someone@example.com?Subject=Hello%20again"
+                target="_top"
+              >
+                <button type="submit" class="site-btn">
+                  Keep in touch with us
+                </button>
+              </a>
+              <div class="footer__widget__social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="footer__copyright">
+              <div class="footer__copyright__text">
+                <p>
+                  <!-- Link back to ecommerce can't be removed. site is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved
+                  <!-- Link back to ecommerce can't be removed. site is licensed under CC BY 3.0. -->
+                </p>
+              </div>
+              <div class="footer__copyright__payment">
+                <img src="img/payment-item.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <!-- Footer Section End -->
+
+    <div id="snackbar"></div>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -449,16 +519,16 @@
     <script src="js/main.js"></script>
 
     <script>
-        let products = "",
-          productCategory,
-          categoryArray = [],
-          subtotal = 0;
-  
-        $.get("./data/Cart.json", function (response, status) {
-          // console.log("Data: ", data);
-          let data = response.data.products;
-          data.forEach((val, index) => {
-            products+=`<tr>
+      let products = "",
+        productCategory,
+        categoryArray = [],
+        subtotal = 0;
+
+      $.get("./data/Cart.json", function (response, status) {
+        // console.log("Data: ", data);
+        let data = response.data.products;
+        data.forEach((val, index) => {
+          products += `<tr>
                         <td class="shoping__cart__item">
                             <img src="${val.product_image}" alt="">
                             <h5>${val.product_name}</h5>
@@ -469,97 +539,133 @@
                         <td class="shoping__cart__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="${val.selected_quantity}">
+                                    <input type="text" value="${
+                                      val.selected_quantity
+                                    }">
                                 </div>
                             </div>
                         </td>
                         <td class="shoping__cart__total">
-                            Rs.${(val.price_per_unit*val.selected_quantity)}
+                            Rs.${val.price_per_unit * val.selected_quantity}
                         </td>
                         <td class="shoping__cart__item__close">
                             <span class="icon_close"></span>
                         </td>
                     </tr>`;
-            subtotal+= parseFloat(val.price_per_unit);
-          });
-
-          //Price append
-          $('.cart_sub-total').text('Rs.'+subtotal+'.00');
-          $('.cart_tax').text('Rs.'+response.data.tax+'.00');
-          $('.cart_total').text('Rs.'+(response.data.tax+subtotal)+'.00');
-
-          // Product append
-          $('.shoping__cart__table tbody').append(products);
-  
-              /*-------------------
-                Quantity change
-            --------------------- */
-            var proQty = $('.pro-qty');
-            proQty.prepend('<span class="dec qtybtn">-</span>');
-            proQty.append('<span class="inc qtybtn">+</span>');
-            proQty.on('click', '.qtybtn', function () {
-                var $button = $(this);
-                var oldValue = $button.parent().find('input').val();
-                if ($button.hasClass('inc')) {
-                    let productDetail = JSON.parse(localStorage.getItem('productDetails'));
-                    let maxQuantity = productDetail.productQuantity;
-                    if(parseFloat(oldValue) < maxQuantity){
-                        var newVal = parseFloat(oldValue) + 1;
-                    }else{
-                        var newVal = parseFloat(oldValue)
-                    }
-                } else {
-                    // Don't allow decrementing below zero
-                    if (oldValue > 0) {
-                        var newVal = parseFloat(oldValue) - 1;
-                    } else {
-                        newVal = 0;
-                    }
-                }
-                $button.parent().find('input').val(newVal);
-                
-                let item = $(this).closest('tr').find('.shoping__cart__total');
-                let itemTotal = parseInt(item.text().replace("Rs.",""));
-                // product current item
-                item.text("Rs."+(itemTotal*newVal));
-
-                // cart subtotal
-                $('.cart_sub-total').text('Rs.'+getTotal()+'.00');
-
-                // cart total
-                let taxVal = parseInt($('.cart_tax').text().replace("Rs.",""));
-                $('.cart_total').text('Rs.'+(taxVal+getTotal())+'.00');
-            });
-
-            function getTotal(){
-                let total = 0;
-                $('.shoping__cart__table tr').each((index,val)=>{
-                    let item = $(val).find('.shoping__cart__total');
-                    let itemTotal = parseInt(item.text().replace("Rs.",""));
-                    if(index > 0){
-                        total+=itemTotal;
-                    }
-                });
-                return total;
-            }
-
-            //CLose event
-            $(document).on('click','.shoping__cart__item__close',function(){
-                $(this).closest('tr').remove();
-            });
-
-          //Enable loader
-          $(".loader").fadeOut();
-          $("#preloder").delay(200).fadeOut("slow");
+          subtotal += parseFloat(val.price_per_unit);
         });
 
-        
-        if(localStorage.getItem("loginStatus") === 'true'){
-          $('.header__cart ul li:last-child i').attr('class','fa fa-user');
-          $('.header__cart ul li:last-child>a').attr('href','#');
+        //Price append
+        $(".cart_sub-total").text("Rs." + subtotal + ".00");
+        $(".cart_tax").text("Rs." + response.data.tax + ".00");
+        $(".cart_total").text("Rs." + (response.data.tax + subtotal) + ".00");
+
+        // Product append
+        $(".shoping__cart__table tbody").append(products);
+
+        /*-------------------
+                Quantity change
+            --------------------- */
+        var proQty = $(".pro-qty");
+        proQty.prepend('<span class="dec qtybtn">-</span>');
+        proQty.append('<span class="inc qtybtn">+</span>');
+        proQty.on("click", ".qtybtn", function () {
+          var $button = $(this);
+          var oldValue = $button.parent().find("input").val();
+          if ($button.hasClass("inc")) {
+            let productDetail = JSON.parse(
+              localStorage.getItem("productDetails")
+            );
+            let maxQuantity = productDetail.productQuantity;
+            if (parseFloat(oldValue) < maxQuantity) {
+              var newVal = parseFloat(oldValue) + 1;
+            } else {
+              var newVal = parseFloat(oldValue);
+            }
+          } else {
+            // Don't allow decrementing below zero
+            if (oldValue > 0) {
+              var newVal = parseFloat(oldValue) - 1;
+            } else {
+              newVal = 0;
+            }
+          }
+          $button.parent().find("input").val(newVal);
+
+          let item = $(this).closest("tr").find(".shoping__cart__total");
+          let itemTotal = parseInt(item.text().replace("Rs.", ""));
+          // product current item
+          item.text("Rs." + itemTotal * newVal);
+
+          // cart subtotal
+          $(".cart_sub-total").text("Rs." + getTotal() + ".00");
+
+          // cart total
+          applyTotal();
+        });
+
+        //CLose event
+        $(document).on("click", ".shoping__cart__item__close", function () {
+          $(this).closest("tr").remove();
+        });
+
+        //Enable loader
+        $(".loader").fadeOut();
+        $("#preloder").delay(200).fadeOut("slow");
+      });
+
+      if (localStorage.getItem("loginStatus") === "true") {
+        $(".header__cart ul li:last-child i").attr("class", "fa fa-user");
+        $(".header__cart ul li:last-child>a").attr("href", "#");
+      }
+
+      $("#wallet-input").on("keyup", function () {
+        let currentVal = $(this).val();
+        if (currentVal.length != "") {
+          $(this).siblings().addClass("active");
+          $(this).siblings().prop("disabled", false);
+        } else {
+          $(this).siblings().removeClass("active");
+          $(this).siblings().prop("disabled", true);
+        }
+      });
+      $(".wallet-form").on("submit", function (e) {
+        e.preventDefault();
+        let inputVal = parseInt($("#wallet-input").val());
+        let existingVal = parseInt($("p.walletVal").text());
+        let difference = existingVal - inputVal;
+        if (inputVal > 0 && difference > 0) {
+          showSnackBar("Wallet amount redeemed successfully");
+          //update wallet value in total section
+          $(".cart_wallet").text("Rs." + inputVal + ".00");
+          //clearing wallet input
+          $("#wallet-input").val("");
+          //update wallet values
+          $('.walletVal').text(difference);
+          //update primary total
+          applyTotal();
+        } else {
+          showSnackBar("Insufficient money from wallet");
+        }
+      });
+
+      function getTotal() {
+          let total = 0;
+          $(".shoping__cart__table tr").each((index, val) => {
+            let item = $(val).find(".shoping__cart__total");
+            let itemTotal = parseInt(item.text().replace("Rs.", ""));
+            if (index > 0) {
+              total += itemTotal;
+            }
+          });
+          return total;
         }
 
-      </script>
-</body>
-
+        function applyTotal(){
+          let taxVal = parseInt($(".cart_tax").text().replace("Rs.", ""));
+          let walletVal = parseInt($(".cart_wallet").text().replace("Rs.", ""));
+          $(".cart_total").text("Rs." + (taxVal + walletVal + getTotal()) + ".00");
+        }
+    </script>
+  </body>
 </html>
