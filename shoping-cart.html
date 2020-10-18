@@ -186,7 +186,7 @@
                 Total Cost: <span>Rs. 150.00</span>
               </div>
               <div class="wallet-container">
-                <img src="./img/wallet.png" alt="" />
+                <img src="./img/star.png" alt="" />
                 <p class="walletVal">250</p>
               </div>
             </div>
@@ -380,9 +380,9 @@
             </div>
             <div class="shoping__continue wallet-use">
               <div class="shoping__discount">
-                <h5>Redeem your wallet money</h5>
+                <h5>Redeem your money</h5>
                 <span
-                  >Available wallet money: Rs.<span class="walletVal"
+                  >Available money: Rs.<span class="walletVal"
                     >250</span
                   ></span
                 >
@@ -405,7 +405,7 @@
               <ul class="cart-total">
                 <li>Subtotal <span class="cart_sub-total">Rs.0.00</span></li>
                 <li>Tax <span class="cart_tax">Rs.0.00</span></li>
-                <li>Wallet offer <span class="cart_wallet">Rs.0.00</span></li>
+                <li>Redeem offer <span class="cart_wallet">Rs.0.00</span></li>
                 <li>
                   Discount offer <span class="cart_discount">Rs.0.00</span>
                 </li>
@@ -636,7 +636,7 @@
         let existingWalletVal = parseInt($(".cart_wallet").text().replace("Rs.", "").replace("-", ""));
         let difference = existingVal - inputVal;
         if (inputVal > 0 && difference > 0) {
-          showSnackBar("Wallet amount redeemed successfully");
+          showSnackBar("Offer applied successfully");
           //update wallet value in total section
           $(".cart_wallet").text("- Rs." + (inputVal+existingWalletVal) + ".00");
           //clearing wallet input
@@ -648,9 +648,9 @@
           let subTotal = parseInt($(".cart_sub-total").text().replace("Rs.", ""));
           let taxVal = parseInt($(".cart_tax").text().replace("Rs.", ""));
 
-          $(".cart_total").text("Rs." + math.abs((taxVal+subTotal) - walletVal) + ".00");
+          $(".cart_total").text("Rs." + Math.abs((taxVal+subTotal) - walletVal) + ".00");
         } else {
-          showSnackBar("Insufficient money from wallet");
+          showSnackBar("Insufficient money");
         }
       });
 

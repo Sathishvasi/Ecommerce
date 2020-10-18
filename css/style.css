@@ -583,17 +583,18 @@ ol {
 }
 
 .header__cart .wallet-container img{
-	width: 50px;
+	width: 55px;
 }
 
 .header__cart .wallet-container p{
 	font-weight: bold;
-    color: #004277;
+    color: #cc0e00;
     position: absolute;
-    top: 18px;
-    left: 9px;
+    top: calc(50% + 2px);
+    left: 50%;
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
+    transform: translate(-50%, -50%);
 }
 
 .header__cart .header__cart__price span {
