@@ -187,7 +187,7 @@
               </div>
               <div class="wallet-container">
                 <img src="./img/star.png" alt="" />
-                <p class="walletVal">250</p>
+                <p class="redeemVal">250</p>
               </div>
             </div>
           </div>
@@ -380,10 +380,10 @@
             </div>
             <div class="shoping__continue wallet-use">
               <div class="shoping__discount">
-                <h5>Redeem your money</h5>
+                <h5>Withdrawal your wallet money</h5>
                 <span
                   >Available money: Rs.<span class="walletVal"
-                    >250</span
+                    >50</span
                   ></span
                 >
                 <form class="wallet-form">
@@ -405,7 +405,7 @@
               <ul class="cart-total">
                 <li>Subtotal <span class="cart_sub-total">Rs.0.00</span></li>
                 <li>Tax <span class="cart_tax">Rs.0.00</span></li>
-                <li>Redeem offer <span class="cart_wallet">Rs.0.00</span></li>
+                <li>Wallet money <span class="cart_wallet">Rs.0.00</span></li>
                 <li>
                   Discount offer <span class="cart_discount">Rs.0.00</span>
                 </li>
@@ -632,7 +632,7 @@
       $(".wallet-form").on("submit", function (e) {
         e.preventDefault();
         let inputVal = parseInt($("#wallet-input").val());
-        let existingVal = parseInt($("p.walletVal").text());
+        let existingVal = parseInt($(".walletVal").text());
         let existingWalletVal = parseInt($(".cart_wallet").text().replace("Rs.", "").replace("-", ""));
         let difference = existingVal - inputVal;
         if (inputVal > 0 && difference > 0) {

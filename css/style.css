@@ -550,6 +550,22 @@ ol {
 	letter-spacing: 4px;
 } */
 
+.wallet{
+	position: absolute;
+    margin-top: 55px;
+    right: 0;
+}
+
+.wallet img{
+	width: 80px;
+}
+
+.wallet p{
+	font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .wallet-use form button.active{
     background: #7fad39;
 }
@@ -3554,6 +3570,20 @@ ol {
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
+	.wallet{
+		margin: 0;
+		position: relative;
+		display: inline-block;
+		top: 26px;
+		margin-left: 25px;
+	}
+	.wallet img{
+		width: 50px;
+	}
+	.wallet p{
+		margin: 0;
+		font-size: 14px;
+	}
 	.hero__search__form form .hero__search__categories {
 		display: none;
 	}
@@ -3616,6 +3646,7 @@ ol {
 	border-radius: 5px;
 	padding: 2px 15px;
 	bottom: -20px;
+	z-index: 99;
 }
 
 .login-dropdown a{

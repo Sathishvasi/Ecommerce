@@ -198,7 +198,15 @@
 
     /*-------------------
 		Quantity change
-	--------------------- */
+    --------------------- */
+    function updateProductWeight(oldValue, newVal){
+        let currentPrice = parseFloat($('.p-weight').text().split(' ')[0]);
+        let unit = $('.p-weight').text().split(' ')[1];
+        let quantityPrice = (currentPrice/oldValue);
+        let updatedWeight = (quantityPrice*newVal)+" "+unit;
+        $('.p-weight').text(updatedWeight)
+    }
+
     var proQty = $('.pro-qty');
     proQty.prepend('<span class="dec qtybtn">-</span>');
     proQty.append('<span class="inc qtybtn">+</span>');
@@ -210,15 +218,19 @@
             let maxQuantity = productDetail.productQuantity;
             if(parseFloat(oldValue) < maxQuantity){
                 var newVal = parseFloat(oldValue) + 1;
+                //Update weight
+                updateProductWeight(oldValue, newVal)
             }else{
                 var newVal = parseFloat(oldValue)
             }
         } else {
             // Don't allow decrementing below zero
-            if (oldValue > 0) {
+            if (oldValue > 1) {
                 var newVal = parseFloat(oldValue) - 1;
-            } else {
-                newVal = 0;
+                //Update weight
+                updateProductWeight(oldValue, newVal)
+            }else{
+                newVal = 1;
             }
         }
         $button.parent().find('input').val(newVal);
