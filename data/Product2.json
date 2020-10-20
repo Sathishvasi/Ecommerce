@@ -5,7 +5,7 @@
   "data": [
     {
       "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
+      "category": "fast_food",
       "product_status": "available",
       "product_id": "1983721",
       "product_name": "Fresh Meat",
@@ -31,7 +31,7 @@
     },
     {
       "misc": "10 % offer on 1 liters",
-      "category": "dairy_products",
+      "category": "fast_food",
       "product_status": "available",
       "product_id": "9723491",
       "product_name": "Banana",
@@ -57,7 +57,7 @@
     },
     {
       "misc": "Limeted product_status available",
-      "category": "vegetables",
+      "category": "fast_food",
       "product_status": "available",
       "product_id": "9755491",
       "product_name": "Water Melon",
@@ -70,7 +70,7 @@
     },
     {
       "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
+      "category": "milk_products",
       "product_status": "available",
       "product_id": "1983721",
       "product_name": "Grapes",
@@ -83,7 +83,7 @@
     },
     {
       "misc": "Limeted product_status available",
-      "category": "vegetables",
+      "category": "fast_food",
       "product_status": "available",
       "product_id": "9755491",
       "product_name": "Veg Sandwich",
@@ -96,7 +96,7 @@
     },
     {
       "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
+      "category": "milk_products",
       "product_status": "available",
       "product_id": "1983721",
       "product_name": "Grapes",

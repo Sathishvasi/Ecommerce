@@ -1,6 +1,6 @@
 /******************************************************************
-  Template Name: Ecommerce
-  Description:  Ecommerce eCommerce  HTML Template
+  site Name: Ecommerce
+  Description:  Ecommerce eCommerce  HTML site
   Author: ecommerce
   Author URI: https://ecommerce.com
   Version: 1.0
@@ -10,7 +10,7 @@
 /*------------------------------------------------------------------
 [Table of contents]
 
-1.  Template default CSS
+1.  site default CSS
 	1.1	Variables
 	1.2	Mixins
 	1.3	Flexbox
@@ -27,7 +27,7 @@
 -------------------------------------------------------------------*/
 
 /*----------------------------------------*/
-/* Template default CSS
+/* site default CSS
 /*----------------------------------------*/
 
 html,
@@ -191,7 +191,7 @@ ol {
 	top: 0;
 	left: 0;
 	z-index: 999999;
-	background: #000;
+	background: #000000de;
 }
 
 .loader {
@@ -541,10 +541,60 @@ ol {
 	right: -12px;
 }
 
+/* .wallet-use h5{
+    width: 50%;
+    display: inline-block;
+}
+
+.wallet-use .site-btn{
+	letter-spacing: 4px;
+} */
+
+.wallet-use form button.active{
+    background: #7fad39;
+}
+
+.wallet-use h5{
+	margin-bottom: 0px !important;
+}
+
+.walletVal {
+    display: inline !important;
+}
+
+.wallet-use span{
+	margin: 6px 0 15px 0;
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
 .header__cart .header__cart__price {
 	font-size: 14px;
 	color: #6f6f6f;
+	/* display: inline-block; */
+	display: none;
+}
+
+.header__cart .wallet-container{
 	display: inline-block;
+	position: relative;
+	transform: translateY(-8px);
+}
+
+.header__cart .wallet-container img{
+	width: 55px;
+}
+
+.header__cart .wallet-container p{
+	font-weight: bold;
+    color: #cc0e00;
+    position: absolute;
+    top: calc(50% + 2px);
+    left: 50%;
+    margin: 0;
+    font-size: 14px;
+    transform: translate(-50%, -50%);
 }
 
 .header__cart .header__cart__price span {
@@ -767,6 +817,22 @@ ol {
 .categories__item {
 	height: 270px;
 	position: relative;
+	cursor: pointer;
+	border: 1px solid #b5b5b5;
+    border-radius: 5px;
+}
+
+.categories__item .category-border{
+	width: 100%;
+    height: 100%;
+    border: 5px solid #7fad39;
+    border-radius: 5px;
+    transition: 0.5s ease all;
+    opacity: 0;
+}
+
+.categories__item .category-border.active{
+	opacity: 1;
 }
 
 .categories__item h5 {
@@ -958,8 +1024,8 @@ ol {
 -----------------------*/
 
 .latest-product {
-	padding-top: 80px;
-	padding-bottom: 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .latest-product__text h4 {
@@ -1929,11 +1995,14 @@ ol {
 .shoping__cart__table table tbody tr td.shoping__cart__item img {
 	display: inline-block;
 	margin-right: 25px;
+	width: 150px;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__item h5 {
 	color: #1c1c1c;
 	display: inline-block;
+	text-align: center;
+	text-transform: capitalize;
 }
 
 .shoping__cart__table table tbody tr td.shoping__cart__price {
@@ -2239,18 +2308,28 @@ ol {
 	float: right;
 }
 
-.checkout__order .checkout__order__subtotal {
+.checkout__order .checkout__order__subtotal, .checkout__order .checkout__order__tax {
 	font-size: 18px;
 	color: #1c1c1c;
 	font-weight: 700;
-	border-bottom: 1px solid #e1e1e1;
-	border-top: 1px solid #e1e1e1;
+	
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 	padding-top: 15px;
 }
 
-.checkout__order .checkout__order__subtotal span {
+.checkout__order .checkout__order__subtotal{
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 0;
+}
+
+.checkout__order .checkout__order__tax{
+	border-bottom: 1px solid #e1e1e1;
+
+}
+
+.checkout__order .checkout__order__subtotal span, .checkout__order .checkout__order__tax span {
 	float: right;
 }
 
@@ -2627,6 +2706,8 @@ ol {
 	background: #F3F6FA;
 	padding-top: 70px;
 	padding-bottom: 0;
+	position: absolute;
+    width: 100%;
 }
 
 .footer__about {
@@ -2651,6 +2732,10 @@ ol {
 .footer__widget {
 	margin-bottom: 30px;
 	overflow: hidden;
+}
+
+.footer__widget ul {
+    display: none;
 }
 
 .footer__widget h6 {
@@ -2706,6 +2791,15 @@ ol {
 	height: 100%;
 }
 
+.footer__widget__social{
+	margin-top: 2rem;
+}
+
+.page-header{
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
 .footer__widget .footer__widget__social a {
 	display: inline-block;
 	height: 41px;
@@ -2747,10 +2841,13 @@ ol {
 	color: #1c1c1c;
 	float: left;
 	line-height: 25px;
+	width: 100%;
+	text-align: center;
 }
 
 .footer__copyright__payment {
 	float: right;
+	display: none;
 }
 
 /*---------------------
@@ -3215,6 +3312,8 @@ ol {
 	.footer__copyright__text {
 		float: none;
 		margin-bottom: 25px;
+		width: 100%;
+		text-align: center;
 	}
 	.footer__copyright__payment {
 		float: none;
@@ -3358,7 +3457,16 @@ ol {
 		margin-right: 20px;
 	}
 	.humberger__menu__nav {
-		display: none;
+		margin: 40px 0;
+	}
+	.humberger__menu__nav ul{
+		list-style-type: none;
+	}
+	.humberger__menu__nav ul li {
+		margin-bottom: 20px;
+	}
+	.humberger__menu__nav ul li a {
+		color: black;
 	}
 	.humberger__menu__wrapper .header__top__right__social {
 		display: block;
@@ -3433,6 +3541,16 @@ ol {
 	}
 }
 
+/* Mobile  */
+@media only screen and (max-width: 768px) {
+	.shoping__cart__table table tbody tr td.shoping__cart__item h5{
+		width: 100%;
+		margin-top: 10px;
+	}
+	.shoping__cart__table table tbody tr td.shoping__cart__item{
+		width: 275px;
+	}
+}
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
@@ -3481,3 +3599,126 @@ ol {
 		font-size: 24px;
 	}
 }
+
+.shoping__cart__btns{
+	text-align: right;
+}
+
+.login-dropdown{
+	display: none;
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	position: absolute;
+	background: white;
+	border: 1px solid #b5b5b5;
+	border-radius: 5px;
+	padding: 2px 15px;
+	bottom: -20px;
+}
+
+.login-dropdown a{
+	color: black;
+	padding: 5px 0;
+}
+
+.login-dropdown a:first-child{
+	border-bottom: 1px solid #b5b5b5;
+}
+
+.addFlex{
+	display: flex;
+}
+
+.thankyou-wrapper{
+	position: fixed;
+    background: black;
+	height: 100%;
+	overflow-y: scroll;
+    width: 100%;
+	top: 0;
+	display: none;
+}
+
+.thankyou-wrapper i{
+	width: 97%;
+    font-size: 50px;
+    font-weight: 300;
+    font-style: normal;
+    text-align: right;
+    cursor: pointer;
+    display: block;
+    margin-top: 2rem;
+}
+
+.thankyou-wrapper i, .thankyou-content *{
+	color: #cecece;
+}
+
+.thankyou-content{
+	text-align: center;
+	padding: 0 10px;
+	margin-bottom: 3rem;
+}
+
+.thankyou-content h4{
+	margin-top: 2rem;
+}
+
+.thankyou-content img{
+	width: 175px;
+    margin-top: 1rem;
+}
+
+.thankyou-content h3{
+	margin-top: 3rem;
+    color: #4CAF50;
+}
+
+/* Snackbar */
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+	visibility: hidden; /* Hidden by default. Visible on click */
+	min-width: 250px; /* Set a default minimum width */
+	margin-left: -125px; /* Divide value of min-width by 2 */
+	background-color: #3c8a3f; /* Black background color */
+	color: #fff; /* White text color */
+	text-align: center; /* Centered text */
+	border-radius: 2px; /* Rounded borders */
+	padding: 10px 16px; /* Padding */
+	position: fixed; /* Sit on top of the screen */
+	z-index: 1; /* Add a z-index if needed */
+	left: 50%; /* Center the snackbar */
+	bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+	visibility: visible; /* Show the snackbar */
+	/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+	However, delay the fade out process for 2.5 seconds */
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+  }

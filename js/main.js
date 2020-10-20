@@ -1,6 +1,6 @@
 /*  ---------------------------------------------------
-    Template Name: Ecommerce
-    Description:  Ecommerce eCommerce  HTML Template
+    site Name: Ecommerce
+    Description:  Ecommerce eCommerce  HTML site
     Author: ecommerce
     Author URI: https://ecommerce.com
     Version: 1.0
@@ -15,20 +15,17 @@
         Preloader
     --------------------*/
     $(window).on('load', function () {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-
         /*------------------
             Gallery filter
         --------------------*/
-        $('.featured__controls li').on('click', function () {
+        $(document).on('click','.featured__controls li', function () {
             $('.featured__controls li').removeClass('active');
             $(this).addClass('active');
         });
-        if ($('.featured__filter').length > 0) {
-            var containerEl = document.querySelector('.featured__filter');
-            var mixer = mixitup(containerEl);
-        }
+        // if ($('.featured__filter').length > 0) {
+        //     var containerEl = document.querySelector('.featured__filter');
+        //     var mixer = mixitup(containerEl);
+        // }
     });
 
     /*------------------
@@ -55,16 +52,16 @@
     /*------------------
 		Navigation
 	--------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
-    });
+    // $(".mobile-menu").slicknav({
+    //     prependTo: '#mobile-menu-wrap',
+    //     allowParentLinks: true
+    // });
 
     /*-----------------------
         Categories Slider
     ------------------------*/
     $(".categories__slider").owlCarousel({
-        loop: true,
+        // loop: true,
         margin: 0,
         items: 4,
         dots: false,
@@ -74,11 +71,11 @@
         animateIn: 'fadeIn',
         smartSpeed: 1200,
         autoHeight: false,
-        autoplay: true,
+        // autoplay: true,
         responsive: {
 
             0: {
-                items: 1,
+                items: 2,
             },
 
             480: {
@@ -103,17 +100,17 @@
     /*--------------------------
         Latest Product Slider
     ----------------------------*/
-    $(".latest-product__slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: false,
-        nav: true,
-        navText: ["<span class='fa fa-angle-left'><span/>", "<span class='fa fa-angle-right'><span/>"],
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true
-    });
+    // $(".latest-product__slider").owlCarousel({
+    //     loop: true,
+    //     margin: 0,
+    //     items: 1,
+    //     dots: false,
+    //     nav: true,
+    //     navText: ["<span class='fa fa-angle-left'><span/>", "<span class='fa fa-angle-right'><span/>"],
+    //     smartSpeed: 1200,
+    //     autoHeight: false,
+    //     autoplay: true
+    // });
 
     /*-----------------------------
         Product Discount Slider
@@ -243,8 +240,27 @@
         localStorage.setItem('productDetails',JSON.stringify(productDetails));
         location.href="shop-details.html";
     });
+
+    $('.trigger-search').on('click', function(){
+        let inputVal = $('.trigger-search').siblings('input').val();
+        if(inputVal != ''){
+            localStorage.setItem("searchKey",inputVal);
+            location.href = "./result.html";
+        }
+    })
+
+    $(document).on('click','.fa-user', function(){
+        $('.login-dropdown').toggleClass('addFlex');
+    });
+
 })(jQuery);
 
 function formatSpace(str){
-    return str.replaceAll(" ","").trim();
+    return str.replace(/[^\w\s]/gi, '');
+}
+
+function showSnackBar(text){
+    $('#snackbar').text(text);
+    $('#snackbar').addClass('show');
+    setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
 }

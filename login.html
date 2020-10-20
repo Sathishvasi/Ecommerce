@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V6</title>
+	<title>Thrils | Login
+  </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -27,6 +28,8 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
 <!--===============================================================================================-->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
 </head>
 <style>
 /*//////////////////////////////////////////////////////////////////
@@ -170,12 +173,12 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #ececec;  
+  background: #ffffff;  
 }
 
 .wrap-login100 {
   width: 390px;
-  background: #ececec;
+  background: #ffffff;
 }
 
 
@@ -380,7 +383,7 @@ iframe {
   right: 0px;
   pointer-events: none;
 
-  font-family: Poppins-Regular;
+  font-family: "Cairo", sans-serif;
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
@@ -568,7 +571,9 @@ iframe {
 	</div>
 	
 
-	<div id="dropDownSelect1"></div>
+  <div id="dropDownSelect1"></div>
+  
+  <div id="snackbar"></div>
 	
 <!--===============================================================================================-->
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -585,7 +590,13 @@ iframe {
 <!--===============================================================================================-->
 	<!-- <script src="vendor/countdowntime/countdowntime.js"></script> -->
 <!--===============================================================================================-->
-	<script src="js/login.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="js/login.js"></script>
+  
+  <script>
+    localStorage.setItem('loginStatus','false');
+  </script>
 
 </body>
 </html>

@@ -2,110 +2,93 @@
   "code": 0,
   "desc": "success",
   "message": "success",
-  "data": [
+
+  "data": {
+    "tax": 10,
+    "products" : [
     {
       "misc": "10 % offer on 3 liters",
       "category": "dairy_products",
       "product_status": "available",
       "product_id": "1983721",
-      "product_name": "Fresh Meat",
+      "product_name": "aroma milk",
       "max_quantity": "10",
       "min_range": "0.25",
       "quantity_unit": "liter",
       "price_per_unit": "21.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-1.jpg"
-    },
-    {
-      "misc": "Limeted product_status available",
-      "category": "vegetables",
-      "product_status": "available",
-      "product_id": "9755491",
-      "product_name": "Water Melon",
-      "max_quantity": "20",
-      "min_range": "0.5",
-      "quantity_unit": "kilograms",
-      "price_per_unit": "16.00",
-      "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
-      "product_image": ""
+      "product_image": "img/featured/feature-1.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "10 % offer on 1 liters",
       "category": "dairy_products",
       "product_status": "available",
       "product_id": "9723491",
-      "product_name": "Banana",
+      "product_name": "Arogya milk",
       "max_quantity": "10",
       "min_range": "0.25",
       "quantity_unit": "liter",
       "price_per_unit": "24.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-2.jpg"
+      "product_image": "img/featured/feature-2.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "10 % offer on 3 KG",
       "category": "vegetables",
       "product_status": "available",
       "product_id": "10030321",
-      "product_name": "Guava fruit",
+      "product_name": "Potato",
       "max_quantity": "10",
       "min_range": "0.1",
       "quantity_unit": "kilograms",
       "price_per_unit": "40.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-3.jpg"
+      "product_image": "img/featured/feature-3.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "Limeted product_status available",
       "category": "vegetables",
       "product_status": "available",
       "product_id": "9755491",
-      "product_name": "Water Melon",
+      "product_name": "Brinjal",
       "max_quantity": "20",
       "min_range": "0.5",
       "quantity_unit": "kilograms",
       "price_per_unit": "16.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
-      "product_image": "img/featured/feature-4.jpg"
+      "product_image": "img/featured/feature-4.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "10 % offer on 3 liters",
       "category": "dairy_products",
       "product_status": "available",
       "product_id": "1983721",
-      "product_name": "Grapes",
+      "product_name": "aroma milk",
       "max_quantity": "10",
       "min_range": "0.25",
       "quantity_unit": "liter",
       "price_per_unit": "21.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": "img/featured/feature-5.jpg"
+      "product_image": "img/featured/feature-5.jpg",
+      "selected_quantity": "1"
     },
     {
       "misc": "Limeted product_status available",
       "category": "vegetables",
       "product_status": "available",
       "product_id": "9755491",
-      "product_name": "Veg Sandwich",
+      "product_name": "Brinjal",
       "max_quantity": "20",
       "min_range": "0.5",
       "quantity_unit": "kilograms",
       "price_per_unit": "16.00",
       "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.Specially imported from gujarat",
-      "product_image": "img/featured/feature-6.jpg"
-    },
-    {
-      "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
-      "product_status": "available",
-      "product_id": "1983721",
-      "product_name": "Grapes",
-      "max_quantity": "10",
-      "min_range": "0.25",
-      "quantity_unit": "liter",
-      "price_per_unit": "21.00",
-      "prod_desc": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
-      "product_image": ""
+      "product_image": "img/featured/feature-6.jpg",
+      "selected_quantity": "1"
     }
-  ]
+  ]}
 }
