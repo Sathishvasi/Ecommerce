@@ -2286,6 +2286,32 @@ ol {
 	color: #1c1c1c;
 	font-weight: 700;
 	margin-bottom: 10px;
+	
+}
+
+.checkout__order .checkout__order__products ,.checkout__order .purchased__products .purchased__product{
+	display: grid;
+    grid-column-gap: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    text-align: center;
+}
+
+.checkout__order .purchased__products .purchased__product{
+	padding-top: 8px;
+	padding-bottom: 8px;
+	align-items: center;
+}
+
+.checkout__order .purchased__products .purchased__product .redeempoint-cont img{
+	height: 40px;
+	width: 40px;
+}
+.checkout__order .purchased__products .purchased__product .redeempoint-cont div{
+	color: red;
+	position: absolute;
+	bottom: 20%;
+	left: 40%;
+	font-weight: 900;
 }
 
 .checkout__order .checkout__order__products span {
@@ -2308,7 +2334,7 @@ ol {
 	float: right;
 }
 
-.checkout__order .checkout__order__subtotal, .checkout__order .checkout__order__tax {
+.checkout__order .checkout__order__subtotal, .checkout__order .checkout__order__tax ,.checkout__order .checkout__order__redeem_total{
 	font-size: 18px;
 	color: #1c1c1c;
 	font-weight: 700;
@@ -2329,7 +2355,7 @@ ol {
 
 }
 
-.checkout__order .checkout__order__subtotal span, .checkout__order .checkout__order__tax span {
+.checkout__order .checkout__order__subtotal span, .checkout__order .checkout__order__tax span,.checkout__order .checkout__order__redeem_total span {
 	float: right;
 }
 
@@ -2343,7 +2369,6 @@ ol {
 	font-weight: 700;
 	border-bottom: 1px solid #e1e1e1;
 	padding-bottom: 15px;
-	margin-bottom: 25px;
 }
 
 .checkout__order .checkout__order__total span {
@@ -3721,4 +3746,10 @@ ol {
   @keyframes fadeout {
 	from {bottom: 30px; opacity: 1;}
 	to {bottom: 0; opacity: 0;}
+  }
+
+  .checkout__order .checkout__order__redeem_total .redeem-success-message{
+	color: green !important;
+	font-size: 16px;
+	padding-top: 8px;
   }

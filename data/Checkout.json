@@ -7,15 +7,18 @@
     "catagories": [
       {
         "name": "Vegetable’s Package",
-        "price": 100
+        "price": 100,
+        "redeemPercentage": 5
       },
       {
         "name": "Fresh Vegetable",
-        "price": 50
+        "price": 50,
+        "redeemPercentage": 2
       },
       {
         "name": "Organic Bananas",
-        "price": 150
+        "price": 150,
+        "redeemPercentage": 7
       }
     ],
     "subTotal": 300,
