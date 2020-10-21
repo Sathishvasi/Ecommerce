@@ -6,23 +6,22 @@
   "data": {
     "catagories": [
       {
-        "name": "Vegetable’s Package",
-        "price": 100,
-        "redeemPercentage": 5
-      },
-      {
-        "name": "Fresh Vegetable",
-        "price": 50,
+        "name": "Watermelon",
+        "price": 21,
         "redeemPercentage": 2
       },
       {
-        "name": "Organic Bananas",
-        "price": 150,
-        "redeemPercentage": 7
+        "name": "Banana",
+        "price": 24,
+        "redeemPercentage": 3
+      },
+      {
+        "name": "Guava",
+        "price": 40,
+        "redeemPercentage": 5
       }
-    ],
-    "subTotal": 300,
-    "tax": 10,
-    "total": 310
-  }
+    ]
+  },
+  "redeemRewardValue": 5,
+  "taxPercentage": 5
 }

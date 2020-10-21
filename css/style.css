@@ -2219,7 +2219,7 @@ ol {
 	border: 1px solid #ebebeb;
 	padding-left: 20px;
 	font-size: 16px;
-	color: #b2b2b2;
+	color: #636363;
 	border-radius: 4px;
 }
 
@@ -2325,9 +2325,12 @@ ol {
 .checkout__order .purchased__products .purchased__product .redeempoint-cont div{
 	color: red;
 	position: absolute;
-	bottom: 20%;
-	left: 40%;
+	bottom: 2px;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 	font-weight: 900;
+	font-size: 14px;
 }
 
 .checkout__order .checkout__order__products span {
