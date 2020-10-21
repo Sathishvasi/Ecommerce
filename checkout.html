@@ -269,13 +269,13 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Fist Name<span>*</span></p>
-                                        <input type="text">
+                                        <input class="first-name" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Last Name<span>*</span></p>
-                                        <input type="text">
+                                        <input class="last-name" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -285,32 +285,32 @@
                             </div> -->
                             <div class="checkout__input">
                                 <p>Address<span>*</span></p>
-                                <input type="text" placeholder="Street Address" class="checkout__input__add">
-                                <input type="text" placeholder="Apartment, suite, unite ect (optinal)">
+                                <input type="text" placeholder="Street Address" class="checkout__input__add address-line1">
+                                <input class="address-line2" type="text" placeholder="Apartment, suite, unite ect (optinal)">
                             </div>
                             <div class="checkout__input">
                                 <p>Town/City<span>*</span></p>
-                                <input type="text">
+                                <input class="city" type="text">
                             </div>
                             <div class="checkout__input">
                                 <p>Country/State<span>*</span></p>
-                                <input type="text">
+                                <input class="state" type="text">
                             </div>
                             <div class="checkout__input">
                                 <p>Postcode / ZIP<span>*</span></p>
-                                <input type="text">
+                                <input class="zip-code" type="text">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Phone<span>*</span></p>
-                                        <input type="text">
+                                        <input class="phone" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text">
+                                        <input class="email" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -343,15 +343,16 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
                                 <h4>Your Order</h4>
-                                <div class="checkout__order__products">Products <span>Total</span></div>
-                                <ul class="purchased__products">
+                                <div class="checkout__order__products"><div>Product</div><div>Points</div><div>Total</div></div>
+                                <div class="purchased__products py-2">
                                     <!-- <li>Vegetable’s Package <span>$75.99</span></li>
                                     <li>Fresh Vegetable <span>$151.99</span></li>
                                     <li>Organic Bananas <span>$53.99</span></li> -->
-                                </ul>
+                                </div>
                                 <div class="checkout__order__subtotal">Subtotal <span>Rs. 750.99</span></div>
                                 <div class="checkout__order__tax">Tax <span>Rs. 750.99</span></div>
                                 <div class="checkout__order__total">Total <span>Rs. 750.99</span></div>
+                                <div class="checkout__order__redeem_total">Redeem points <span>Rs. 750.99</span></div>
                                 <!-- <div class="checkout__input__checkbox">
                                     <label for="acc-or">
                                         Create an account?
@@ -484,16 +485,32 @@
             let data = response.data;
             let products = '';
             console.log(data);
-
+            let redeemPercentage = 0;
+            let redeemRewardValue = 5;
             data.catagories.forEach(function(val,index){
-                products+= `<li>${val.name}<span>Rs. ${val.price}.00</span></li>`
+                products+= `<div class="purchased__product"><div>${val.name}</div><div><div class="redeempoint-cont position-relative"><img src="./img/star.png" alt=""/><div>${val.redeemPercentage*redeemRewardValue}</div></div></div><div>₹${val.price}.00</div></div>`
+                redeemPercentage = redeemPercentage + redeemRewardValue*val.redeemPercentage;
                 // console.log(val)
             })
             $('.purchased__products').append(products);
-            $('.checkout__order__subtotal span').text("Rs. "+data.subTotal+".00");
-            $('.checkout__order__tax span').text("Rs. "+data.tax+".00");
-            $('.checkout__order__total span').text("Rs. "+data.total+".00");
+            $('.checkout__order__subtotal span').text("₹"+data.subTotal+".00");
+            $('.checkout__order__tax span').text("₹"+data.tax+".00");
+            $('.checkout__order__total span').text("₹"+data.total+".00");
+            if(redeemPercentage > 0){
+                $('.checkout__order__redeem_total span').text(redeemPercentage);
+                $('.checkout__order__redeem_total').append(`<div class="redeem-success-message">Congrats, you have earned points for this order</div>`);
+            }
 
+            //Prefilling Billing Details
+            $('.checkout__form .first-name').val("Sathish");
+            $('.checkout__form .last-name').val("Kumar");
+            $('.checkout__form .address-line1').val("19/a");
+            $('.checkout__form .address-line2').val("Railway colony");
+            $('.checkout__form .city').val("Dgl");
+            $('.checkout__form .state').val("Tamilnadu");
+            $('.checkout__form .zip-code').val("624005");
+            $('.checkout__form .phone').val("8861927499");
+            $('.checkout__form .email').val("sathish17595@gmail.com");
 
             //Enable loader
             $(".loader").fadeOut();
