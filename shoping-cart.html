@@ -51,7 +51,7 @@
           </li>
         </ul>
         <div class="header__cart__price">
-          Total Cost: <span>Rs. 150.00</span>
+          Total Cost: <span>₹ 150.00</span>
         </div>
       </div>
       <div class="humberger__menu__widget">
@@ -183,7 +183,7 @@
                 </li>
               </ul>
               <div class="header__cart__price">
-                Total Cost: <span>Rs. 150.00</span>
+                Total Cost: <span>₹ 150.00</span>
               </div>
               <div class="wallet-container">
                 <img src="./img/star.png" alt="" />
@@ -382,7 +382,7 @@
               <div class="shoping__discount">
                 <h5>Withdrawal your wallet money</h5>
                 <span
-                  >Available money: Rs.<span class="walletVal"
+                  >Available money: ₹<span class="walletVal"
                     >50</span
                   ></span
                 >
@@ -403,13 +403,13 @@
             <div class="shoping__checkout">
               <h5>Cart Total</h5>
               <ul class="cart-total">
-                <li>Subtotal <span class="cart_sub-total">Rs.0.00</span></li>
-                <li>Tax <span class="cart_tax">Rs.0.00</span></li>
-                <li>Wallet money <span class="cart_wallet">Rs.0.00</span></li>
+                <li>Subtotal <span class="cart_sub-total">₹0.00</span></li>
+                <li>Tax <span class="cart_tax">₹0.00</span></li>
+                <li>Wallet money <span class="cart_wallet">₹0.00</span></li>
                 <li>
-                  Discount offer <span class="cart_discount">Rs.0.00</span>
+                  Discount offer <span class="cart_discount">₹0.00</span>
                 </li>
-                <li>Total <span class="cart_total">Rs.0.00</span></li>
+                <li>Total <span class="cart_total">₹0.00</span></li>
               </ul>
               <a href="checkout.html" class="primary-btn"
                 >PROCEED TO CHECKOUT</a
@@ -534,7 +534,7 @@
                             <h5>${val.product_name}</h5>
                         </td>
                         <td class="shoping__cart__price">
-                            Rs.${val.price_per_unit}
+                            ₹${val.price_per_unit}
                         </td>
                         <td class="shoping__cart__quantity">
                             <div class="quantity">
@@ -546,7 +546,7 @@
                             </div>
                         </td>
                         <td class="shoping__cart__total">
-                            Rs.${val.price_per_unit * val.selected_quantity}
+                            ₹${val.price_per_unit * val.selected_quantity}
                         </td>
                         <td class="shoping__cart__item__close">
                             <span class="icon_close"></span>
@@ -556,9 +556,11 @@
         });
 
         //Price append
-        $(".cart_sub-total").text("Rs." + subtotal + ".00");
-        $(".cart_tax").text("Rs." + response.data.tax + ".00");
-        $(".cart_total").text("Rs." + (response.data.tax + subtotal) + ".00");
+        let taxPercentage = response.taxPercentage;
+        let taxValue = (subtotal/100)*taxPercentage;
+        $(".cart_sub-total").text("₹" + subtotal + ".00");
+        $(".cart_tax").text("₹" + taxValue + ".00");
+        $(".cart_total").text("₹" + (taxValue + subtotal) + ".00");
 
         // Product append
         $(".shoping__cart__table tbody").append(products);
@@ -593,12 +595,12 @@
           $button.parent().find("input").val(newVal);
 
           let item = $(this).closest("tr").find(".shoping__cart__total");
-          let itemTotal = parseInt(item.text().replace("Rs.", ""));
+          let itemTotal = parseInt(item.text().replace("₹", ""));
           // product current item
-          item.text("Rs." + itemTotal * newVal);
+          item.text("₹" + itemTotal * newVal);
 
           // cart subtotal
-          $(".cart_sub-total").text("Rs." + getTotal() + ".00");
+          $(".cart_sub-total").text("₹" + getTotal() + ".00");
 
           // cart total
           applyTotal();
@@ -633,22 +635,22 @@
         e.preventDefault();
         let inputVal = parseInt($("#wallet-input").val());
         let existingVal = parseInt($(".walletVal").text());
-        let existingWalletVal = parseInt($(".cart_wallet").text().replace("Rs.", "").replace("-", ""));
+        let existingWalletVal = parseInt($(".cart_wallet").text().replace("₹", "").replace("-", ""));
         let difference = existingVal - inputVal;
         if (inputVal > 0 && difference > 0) {
           showSnackBar("Offer applied successfully");
           //update wallet value in total section
-          $(".cart_wallet").text("- Rs." + (inputVal+existingWalletVal) + ".00");
+          $(".cart_wallet").text("- ₹" + (inputVal+existingWalletVal) + ".00");
           //clearing wallet input
           $("#wallet-input").val("");
           //update wallet values
           $('.walletVal').text(difference);
           //update primary total
-          let walletVal = parseInt($(".cart_wallet").text().replace("Rs.", "").replace("-", ""));
-          let subTotal = parseInt($(".cart_sub-total").text().replace("Rs.", ""));
-          let taxVal = parseInt($(".cart_tax").text().replace("Rs.", ""));
+          let walletVal = parseInt($(".cart_wallet").text().replace("₹", "").replace("-", ""));
+          let subTotal = parseInt($(".cart_sub-total").text().replace("₹", ""));
+          let taxVal = parseInt($(".cart_tax").text().replace("₹", ""));
 
-          $(".cart_total").text("Rs." + Math.abs((taxVal+subTotal) - walletVal) + ".00");
+          $(".cart_total").text("₹" + Math.abs((taxVal+subTotal) - walletVal) + ".00");
         } else {
           showSnackBar("Insufficient money");
         }
@@ -658,7 +660,7 @@
           let total = 0;
           $(".shoping__cart__table tr").each((index, val) => {
             let item = $(val).find(".shoping__cart__total");
-            let itemTotal = parseInt(item.text().replace("Rs.", ""));
+            let itemTotal = parseInt(item.text().replace("₹", ""));
             if (index > 0) {
               total += itemTotal;
             }
@@ -667,9 +669,9 @@
         }
 
         function applyTotal(){
-          let taxVal = parseInt($(".cart_tax").text().replace("Rs.", ""));
-          let walletVal = parseInt($(".cart_wallet").text().replace("Rs.", ""));
-          $(".cart_total").text("Rs." + (taxVal + walletVal + getTotal()) + ".00");
+          let taxVal = parseInt($(".cart_tax").text().replace("₹", ""));
+          let walletVal = parseInt($(".cart_wallet").text().replace("₹", ""));
+          $(".cart_total").text("₹" + (taxVal + walletVal + getTotal()) + ".00");
         }
     </script>
   </body>

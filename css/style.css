@@ -2219,7 +2219,7 @@ ol {
 	border: 1px solid #ebebeb;
 	padding-left: 20px;
 	font-size: 16px;
-	color: #b2b2b2;
+	color: #636363;
 	border-radius: 4px;
 }
 
@@ -2326,8 +2326,9 @@ ol {
 	color: red;
 	position: absolute;
 	bottom: 20%;
-	left: 40%;
+	left: 35%;
 	font-weight: 900;
+	font-size: 14px;
 }
 
 .checkout__order .checkout__order__products span {

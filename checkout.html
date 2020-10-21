@@ -42,7 +42,7 @@
                 <li><a href="heart.html"><i class="fa fa-heart"></i> <span>3</span></a></li>
 <li><a href="./shoping-cart.html"><i class="fa fa-shopping-cart"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">Total Cost: <span>Rs. 150.00</span></div>
+            <div class="header__cart__price">Total Cost: <span>₹150.00</span></div>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
@@ -165,10 +165,10 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="header__cart__price">Total Cost: <span>Rs. 150.00</span></div>
+                        <div class="header__cart__price">Total Cost: <span>₹150.00</span></div>
                         <div class="wallet-container">
                             <img src="./img/star.png" alt="">
-                            <p class="redeemVal">250</p>
+                            <p class="walletVal">250</p>
                           </div>
                     </div>
                 </div>
@@ -349,10 +349,10 @@
                                     <li>Fresh Vegetable <span>$151.99</span></li>
                                     <li>Organic Bananas <span>$53.99</span></li> -->
                                 </div>
-                                <div class="checkout__order__subtotal">Subtotal <span>Rs. 750.99</span></div>
-                                <div class="checkout__order__tax">Tax <span>Rs. 750.99</span></div>
-                                <div class="checkout__order__total">Total <span>Rs. 750.99</span></div>
-                                <div class="checkout__order__redeem_total">Redeem points <span>Rs. 750.99</span></div>
+                                <div class="checkout__order__subtotal">Subtotal <span>₹750.99</span></div>
+                                <div class="checkout__order__tax">Tax <span>₹750.99</span></div>
+                                <div class="checkout__order__total">Total <span>₹750.99</span></div>
+                                <div class="checkout__order__redeem_total">Redeem points <span>₹750.99</span></div>
                                 <!-- <div class="checkout__input__checkbox">
                                     <label for="acc-or">
                                         Create an account?
@@ -486,16 +486,20 @@
             let products = '';
             console.log(data);
             let redeemPercentage = 0;
-            let redeemRewardValue = 5;
+            let redeemRewardValue = response.redeemRewardValue;
+            let taxPercentage = response.taxPercentage;
+            let cartSubTotal = 0;
             data.catagories.forEach(function(val,index){
                 products+= `<div class="purchased__product"><div>${val.name}</div><div><div class="redeempoint-cont position-relative"><img src="./img/star.png" alt=""/><div>${val.redeemPercentage*redeemRewardValue}</div></div></div><div>₹${val.price}.00</div></div>`
                 redeemPercentage = redeemPercentage + redeemRewardValue*val.redeemPercentage;
+                cartSubTotal+= val.price;
                 // console.log(val)
             })
+            let taxValue = (cartSubTotal/100)*taxPercentage;
             $('.purchased__products').append(products);
-            $('.checkout__order__subtotal span').text("₹"+data.subTotal+".00");
-            $('.checkout__order__tax span').text("₹"+data.tax+".00");
-            $('.checkout__order__total span').text("₹"+data.total+".00");
+            $('.checkout__order__subtotal span').text("₹"+cartSubTotal+".00");
+            $('.checkout__order__tax span').text("₹"+taxValue+".00");
+            $('.checkout__order__total span').text("₹"+(cartSubTotal + taxValue)+".00");
             if(redeemPercentage > 0){
                 $('.checkout__order__redeem_total span').text(redeemPercentage);
                 $('.checkout__order__redeem_total').append(`<div class="redeem-success-message">Congrats, you have earned points for this order</div>`);
