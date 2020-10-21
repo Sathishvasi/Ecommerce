@@ -168,7 +168,7 @@
                         <div class="header__cart__price">Total Cost: <span>₹150.00</span></div>
                         <div class="wallet-container">
                             <img src="./img/star.png" alt="">
-                            <p class="walletVal">250</p>
+                            <p class="redeemVal">250</p>
                           </div>
                     </div>
                 </div>
@@ -498,11 +498,11 @@
             let taxValue = (cartSubTotal/100)*taxPercentage;
             $('.purchased__products').append(products);
             $('.checkout__order__subtotal span').text("₹"+cartSubTotal+".00");
-            $('.checkout__order__tax span').text("₹"+taxValue+".00");
-            $('.checkout__order__total span').text("₹"+(cartSubTotal + taxValue)+".00");
+            $('.checkout__order__tax span').text("₹"+taxValue);
+            $('.checkout__order__total span').text("₹"+(cartSubTotal + taxValue));
             if(redeemPercentage > 0){
                 $('.checkout__order__redeem_total span').text(redeemPercentage);
-                $('.checkout__order__redeem_total').append(`<div class="redeem-success-message">Congrats, you have earned points for this order</div>`);
+                $('.checkout__order__redeem_total').append(`<div class="redeem-success-message">Congrats, you have earned ${redeemPercentage} redeem points for this order</div>`);
             }
 
             //Prefilling Billing Details

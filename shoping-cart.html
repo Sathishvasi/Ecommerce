@@ -541,7 +541,7 @@
                                 <div class="pro-qty">
                                     <input type="text" value="${
                                       val.selected_quantity
-                                    }">
+                                    }" disabled>
                                 </div>
                             </div>
                         </td>
@@ -559,8 +559,8 @@
         let taxPercentage = response.taxPercentage;
         let taxValue = (subtotal/100)*taxPercentage;
         $(".cart_sub-total").text("₹" + subtotal + ".00");
-        $(".cart_tax").text("₹" + taxValue + ".00");
-        $(".cart_total").text("₹" + (taxValue + subtotal) + ".00");
+        $(".cart_tax").text("₹" + taxValue);
+        $(".cart_total").text("₹" + (taxValue + subtotal));
 
         // Product append
         $(".shoping__cart__table tbody").append(products);
@@ -595,7 +595,8 @@
           $button.parent().find("input").val(newVal);
 
           let item = $(this).closest("tr").find(".shoping__cart__total");
-          let itemTotal = parseInt(item.text().replace("₹", ""));
+          let currPrice = $(this).closest("tr").find(".shoping__cart__price");
+          let itemTotal = parseInt(currPrice.text().replace("₹", ""));
           // product current item
           item.text("₹" + itemTotal * newVal);
 
@@ -671,6 +672,7 @@
         function applyTotal(){
           let taxVal = parseInt($(".cart_tax").text().replace("₹", ""));
           let walletVal = parseInt($(".cart_wallet").text().replace("₹", ""));
+          walletVal = walletVal ? walletVal : 0;
           $(".cart_total").text("₹" + (taxVal + walletVal + getTotal()) + ".00");
         }
     </script>

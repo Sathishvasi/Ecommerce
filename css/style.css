@@ -2325,8 +2325,10 @@ ol {
 .checkout__order .purchased__products .purchased__product .redeempoint-cont div{
 	color: red;
 	position: absolute;
-	bottom: 20%;
-	left: 35%;
+	bottom: 2px;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 	font-weight: 900;
 	font-size: 14px;
 }
