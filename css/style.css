@@ -3236,9 +3236,9 @@ ol {
 	.humberger__menu__widget .header__top__right__language {
 		margin-right: 20px;
 	}
-	.humberger__menu__nav {
+	/* .humberger__menu__nav {
 		display: none;
-	}
+	} */
 	.humberger__menu__wrapper .header__top__right__social {
 		display: block;
 		margin-right: 0;
@@ -3314,7 +3314,7 @@ ol {
 
 /* Wide Mobile = 480px */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
 	.featured__item__pic__hover{
 		bottom: 20px;
 	}
@@ -3598,6 +3598,16 @@ ol {
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
+	.thankyou-content .qr-img{
+		width: 175px !important;
+		height: 175px !important;
+	}
+	.thankyou-content .person-cart{
+		display: none;
+	}
+	.thankyou-content h3{
+		margin-top: 1rem !important;
+	}
 	.wallet{
 		margin: 0;
 		position: relative;
@@ -3717,7 +3727,7 @@ ol {
 
 .thankyou-content{
 	text-align: center;
-	padding: 0 10px;
+	padding: 0 20px;
 	margin-bottom: 3rem;
 }
 
@@ -3726,15 +3736,36 @@ ol {
 }
 
 .thankyou-content img{
-	width: 175px;
-    margin-top: 1rem;
+	width: 150px;
+    object-fit: contain;
 }
 
 .thankyou-content h3{
-	margin-top: 3rem;
+	margin-top: 2rem;
     color: #4CAF50;
 }
 
+.thankyou-content .images{
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+    margin-top: 1rem;
+}
+
+.thankyou-content .qr-img{
+    background-color: white;
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+.thankyou-content .qr-img img{
+	width: 70%;
+}
 /* Snackbar */
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
@@ -3787,3 +3818,17 @@ ol {
 	font-size: 16px;
 	padding-top: 8px;
   }
+
+  a.add-fav, .hide-fav {
+    display: none !important;
+}
+
+.wlt{
+	margin-right: 10px;
+}
+
+.wlt p{
+	color: black !important;
+    left: 40% !important;
+    top: 60% !important;
+}

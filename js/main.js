@@ -276,3 +276,5 @@ function showSnackBar(text){
     $('#snackbar').addClass('show');
     setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
 }
+
+$('[data-toggle="tooltip"]').tooltip(); 
