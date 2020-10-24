@@ -3832,3 +3832,7 @@ ol {
     left: 40% !important;
     top: 60% !important;
 }
+
+.loggout-icon,.proceed-checkout{
+	cursor: pointer;
+}

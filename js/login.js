@@ -1,7 +1,10 @@
 
 (function ($) {
     "use strict";
-
+    let  isLoggedIn = localStorage.getItem('loginStatus') || false
+    if(isLoggedIn === 'true'){
+        location.href = "./index.html";
+    }
     /*==================================================================
     [ Focus input ]*/
     $('.input100').each(function(){

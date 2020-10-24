@@ -261,10 +261,6 @@
         }
     })
 
-    $(document).on('click','.fa-user', function(){
-        $('.login-dropdown').toggleClass('addFlex');
-    });
-
 })(jQuery);
 
 function formatSpace(str){
