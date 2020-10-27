@@ -176,23 +176,31 @@
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
-                <li class=""><a href="./index.html">Home</a></li>
-                <li class=""><a href="./shoping-cart.html">Cart</a></li>
-                <!-- <li class=""><a href="./heart.html">Favourites</a></li> -->
-
-                <!-- <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li> -->
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li class=""><a href="./shoping-cart.html">Cart</a></li>                
               </ul>
             </nav>
+            <div class="hero__search">
+              <div class="hero__search__form">
+                <form action="#" onsubmit="return false;">
+                  <div class="hero__search__categories">
+                    All Categories
+                    <span class="arrow_carrot-down"></span>
+                  </div>
+                  <input type="text" placeholder="What do yo u need?" />
+                  <button type="submit" class="site-btn trigger-search">SEARCH</button>
+                </form>
+              </div>
+              <div class="hero__search__phone">
+                <div class="hero__search__phone__icon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <div class="hero__search__phone__text">
+                  <h5>+65 11.188.888</h5>
+                  <span>support 24/7 time</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-lg-3">
             <div class="header__cart">
@@ -216,15 +224,17 @@
                   </div>
                 </li>
               </ul>
-              <div class="header__cart__price">Total Cost: <span>Rs. 150.00</span></div>
-              <div class="wallet-container" data-toggle="tooltip" title="&nbsp;&nbsp;Redeem Points&nbsp;&nbsp;">
-                <img src="./img/star.png" alt="">
-                <p class="redeemVal">250</p>
-              </div>
-              <div class="wallet">
-                <img src="./img/wallet.png" alt="">
-                <p>150.00</p>
-              </div>
+              <!-- <div> -->
+                <div class="header__cart__price">Total Cost: <span>Rs. 150.00</span></div>
+                <div class="wallet-container wlt" data-toggle="tooltip" title="&nbsp;&nbsp;Wallet Points&nbsp;&nbsp;">
+                  <img src="./img/wallet.png" alt="">
+                  <p class="walletVal">100</p>
+                </div>
+                <div class="wallet-container" data-toggle="tooltip" title="&nbsp;&nbsp;Redeem Points&nbsp;&nbsp;">
+                  <img src="./img/star.png" alt="">
+                  <p class="redeemVal">250</p>
+                </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -236,7 +246,7 @@
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero" style="padding: 0px !important;">
+    <section class="hero">
       <div class="container">
         <div class="row">
 

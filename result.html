@@ -162,21 +162,8 @@
           <div class="col-lg-6">
             <nav class="header__menu">
               <ul>
-                <li class=""><a href="./index.html">Home</a></li>
-                <li class=""><a href="./shoping-cart.html">Cart</a></li>
-                <!-- <li class=""><a href="./heart.html">Favourites</a></li> -->
-
-                <!-- <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li> -->
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li class=""><a href="./shoping-cart.html">Cart</a></li>                
               </ul>
             </nav>
           </div>
@@ -185,10 +172,10 @@
               <ul>
                 <li></li>
                 <li>
-                  <a href="#"
+                  <a href="heart.html" class="hide-fav"
                     ><i class="fa fa-heart"></i> <span>3</span></a
                   >
-                <li>
+<li>
                   <a href="./shoping-cart.html"
                     ><i class="fa fa-shopping-cart"></i> <span>3</span></a
                   >
@@ -202,11 +189,17 @@
                   </div>
                 </li>
               </ul>
-              <div class="header__cart__price">Total Cost: <span>Rs. 150.00</span></div>
-              <div class="wallet-container" data-toggle="tooltip" title="&nbsp;&nbsp;Redeem Points&nbsp;&nbsp;">
-                <img src="./img/star.png" alt="">
-                <p class="redeemVal">250</p>
-              </div>
+              <!-- <div> -->
+                <div class="header__cart__price">Total Cost: <span>Rs. 150.00</span></div>
+                <div class="wallet-container wlt" data-toggle="tooltip" title="&nbsp;&nbsp;Wallet Points&nbsp;&nbsp;">
+                  <img src="./img/wallet.png" alt="">
+                  <p class="walletVal">100</p>
+                </div>
+                <div class="wallet-container" data-toggle="tooltip" title="&nbsp;&nbsp;Redeem Points&nbsp;&nbsp;">
+                  <img src="./img/star.png" alt="">
+                  <p class="redeemVal">250</p>
+                </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -218,7 +211,7 @@
     <!-- Header Section End -->
 
         <!-- Latest Product Section Begin -->
-    <section class="latest-product spad">
+    <section class="latest-product spad hero">
       <h3 class="page-header"></h3>
         <div class="container">
             <div class="">

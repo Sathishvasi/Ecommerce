@@ -278,3 +278,7 @@ function showSnackBar(text){
 }
 
 $('[data-toggle="tooltip"]').tooltip(); 
+
+$(document).ready(function(){
+    $('.hero').css('padding-top',$('.header').height()+30)
+})
