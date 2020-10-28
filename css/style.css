@@ -3325,6 +3325,8 @@ ol {
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 991px) {
+
+
 	.featured__item__pic__hover{
 		bottom: 20px;
 	}
@@ -3593,6 +3595,30 @@ ol {
 	.over_hid {
 		overflow: hidden;
 	}
+	.header__logo{
+		height: 90px;
+		display: flex;
+		align-items: center;
+	}
+	.header__logo a{
+		width: 85px;
+	}
+	.cart_container{
+		position: absolute;
+    	width: 100%;
+	}
+	.header__cart{
+		padding-top: 32px;
+	}
+	.header__cart .wallet-container img{
+		width: 35px;
+	}
+	.header__cart .wallet-container p{
+		font-size: 11px;
+	}
+	.header__cart ul{
+		margin-right: 12px;
+	}
 }
 
 /* Mobile  */
@@ -3603,6 +3629,9 @@ ol {
 	}
 	.shoping__cart__table table tbody tr td.shoping__cart__item{
 		width: 275px;
+	}
+	.hero__search {
+		margin-bottom: 15px;
 	}
 }
 /* Small Device = 320px */
