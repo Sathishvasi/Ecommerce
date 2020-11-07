@@ -5,7 +5,11 @@
   "data": [
     {
       "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
+      "main_category": {
+        "name": "Thrils Fresh",
+        "image": "img/categories/cat-3.jpg"
+      },
+      "sub_category": "dairy_products",
       "product_status": "available",
       "product_id": "1983721",
       "product_name": "Fresh Meat",
@@ -18,7 +22,11 @@
     },
     {
       "misc": "Limeted product_status available",
-      "category": "vegetables",
+      "main_category": {
+        "name": "Thrils Fresh",
+        "image": "img/categories/cat-3.jpg"
+      },
+      "sub_category": "vegetables",
       "product_status": "available",
       "product_id": "9755491",
       "product_name": "Water Melon",
@@ -31,7 +39,11 @@
     },
     {
       "misc": "10 % offer on 1 liters",
-      "category": "dairy_products",
+      "main_category": {
+        "name": "Diwali Offers",
+        "image": "img/categories/cat-6.jpg"
+      },
+      "sub_category": "dairy_products",
       "product_status": "available",
       "product_id": "9723491",
       "product_name": "Banana",
@@ -44,7 +56,11 @@
     },
     {
       "misc": "10 % offer on 3 KG",
-      "category": "vegetables",
+      "main_category": {
+        "name": "Diwali Offers",
+        "image": "img/categories/cat-6.jpg"
+      },
+      "sub_category": "vegetables",
       "product_status": "available",
       "product_id": "10030321",
       "product_name": "Guava fruit",
@@ -57,7 +73,11 @@
     },
     {
       "misc": "Limeted product_status available",
-      "category": "vegetables",
+      "main_category": {
+        "name": "Dried Fruits",
+        "image": "img/categories/cat-2.jpg"
+      },
+      "sub_category": "vegetables",
       "product_status": "available",
       "product_id": "9755491",
       "product_name": "Water Melon",
@@ -70,7 +90,11 @@
     },
     {
       "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
+      "main_category": {
+        "name": "Dried Fruits",
+        "image": "img/categories/cat-2.jpg"
+      },
+      "sub_category": "dairy_products",
       "product_status": "available",
       "product_id": "1983721",
       "product_name": "Grapes",
@@ -83,7 +107,11 @@
     },
     {
       "misc": "Limeted product_status available",
-      "category": "vegetables",
+      "main_category": {
+        "name": "Fresh fruits",
+        "image": ""
+      },
+      "sub_category": "vegetables",
       "product_status": "available",
       "product_id": "9755491",
       "product_name": "Veg Sandwich",
@@ -96,7 +124,11 @@
     },
     {
       "misc": "10 % offer on 3 liters",
-      "category": "dairy_products",
+      "main_category": {
+        "name": "Fresh fruits",
+        "image": ""
+      },
+      "sub_category": "dairy_products",
       "product_status": "available",
       "product_id": "1983721",
       "product_name": "Grapes",

@@ -9,16 +9,16 @@
 
 'use strict';
 
-(function ($) {
+(function($) {
 
     /*------------------
         Preloader
     --------------------*/
-    $(window).on('load', function () {
+    $(window).on('load', function() {
         /*------------------
             Gallery filter
         --------------------*/
-        $(document).on('click','.featured__controls li', function () {
+        $(document).on('click', '.featured__controls li', function() {
             $('.featured__controls li').removeClass('active');
             $(this).addClass('active');
         });
@@ -31,19 +31,19 @@
     /*------------------
         Background Set
     --------------------*/
-    $('.set-bg').each(function () {
+    $('.set-bg').each(function() {
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
 
     //Humberger Menu
-    $(document).on('click','.humberger__open', function () {
+    $(document).on('click', '.humberger__open', function() {
         $(".humberger__menu__wrapper").addClass("show__humberger__menu__wrapper");
         $(".humberger__menu__overlay").addClass("active");
         $("body").addClass("over_hid");
     });
 
-    $(document).on('click','.humberger__menu__overlay', function () {
+    $(document).on('click', '.humberger__menu__overlay', function() {
         $(".humberger__menu__wrapper").removeClass("show__humberger__menu__wrapper");
         $(".humberger__menu__overlay").removeClass("active");
         $("body").removeClass("over_hid");
@@ -60,40 +60,9 @@
     /*-----------------------
         Categories Slider
     ------------------------*/
-    $(".categories__slider").owlCarousel({
-        // loop: true,
-        margin: 0,
-        items: 4,
-        dots: false,
-        nav: true,
-        navText: ["<span class='fa fa-angle-left'><span/>", "<span class='fa fa-angle-right'><span/>"],
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        smartSpeed: 1200,
-        autoHeight: false,
-        // autoplay: true,
-        responsive: {
-
-            0: {
-                items: 2,
-            },
-
-            480: {
-                items: 2,
-            },
-
-            768: {
-                items: 3,
-            },
-
-            992: {
-                items: 4,
-            }
-        }
-    });
 
 
-    $('.hero__categories__all').on('click', function(){
+    $('.hero__categories__all').on('click', function() {
         $('.hero__categories ul').slideToggle(400);
     });
 
@@ -169,7 +138,7 @@
         min: minPrice,
         max: maxPrice,
         values: [minPrice, maxPrice],
-        slide: function (event, ui) {
+        slide: function(event, ui) {
             minamount.val('$' + ui.values[0]);
             maxamount.val('$' + ui.values[1]);
         }
@@ -199,28 +168,28 @@
     /*-------------------
 		Quantity change
     --------------------- */
-    function updateProductWeight(oldValue, newVal){
+    function updateProductWeight(oldValue, newVal) {
         let currentPrice = parseFloat($('.p-weight').text().split(' ')[0]);
         let unit = $('.p-weight').text().split(' ')[1];
-        let quantityPrice = (currentPrice/oldValue);
-        let updatedWeight = (quantityPrice*newVal)+" "+unit;
+        let quantityPrice = (currentPrice / oldValue);
+        let updatedWeight = (quantityPrice * newVal) + " " + unit;
         $('.p-weight').text(updatedWeight)
     }
 
     var proQty = $('.pro-qty');
     proQty.prepend('<span class="dec qtybtn">-</span>');
     proQty.append('<span class="inc qtybtn">+</span>');
-    proQty.on('click', '.qtybtn', function () {
+    proQty.on('click', '.qtybtn', function() {
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
         if ($button.hasClass('inc')) {
             let productDetail = JSON.parse(localStorage.getItem('productDetails'));
             let maxQuantity = productDetail.productQuantity;
-            if(parseFloat(oldValue) < maxQuantity){
+            if (parseFloat(oldValue) < maxQuantity) {
                 var newVal = parseFloat(oldValue) + 1;
                 //Update weight
                 updateProductWeight(oldValue, newVal)
-            }else{
+            } else {
                 var newVal = parseFloat(oldValue)
             }
         } else {
@@ -229,15 +198,15 @@
                 var newVal = parseFloat(oldValue) - 1;
                 //Update weight
                 updateProductWeight(oldValue, newVal)
-            }else{
+            } else {
                 newVal = 1;
             }
         }
         $button.parent().find('input').val(newVal);
     });
 
-    $(document).on('click','.featured__item__pic',function(){
-        
+    $(document).on('click', '.featured__item__pic', function() {
+
         var productDetails = {
             productID: $(this).data('id'),
             productName: $(this).data('title'),
@@ -249,14 +218,14 @@
             productQuantity: $(this).data('quantity')
         }
         console.log(productDetails);
-        localStorage.setItem('productDetails',JSON.stringify(productDetails));
-        location.href="shop-details.html";
+        localStorage.setItem('productDetails', JSON.stringify(productDetails));
+        location.href = "shop-details.html";
     });
 
-    $('.trigger-search').on('click', function(){
+    $('.trigger-search').on('click', function() {
         let inputVal = $('.trigger-search').siblings('input').val();
-        if(inputVal != ''){
-            localStorage.setItem("searchKey",inputVal);
+        if (inputVal != '') {
+            localStorage.setItem("searchKey", inputVal);
             location.href = "./result.html";
         }
     })
@@ -264,18 +233,21 @@
 
 })(jQuery);
 
-function formatSpace(str){
+function formatSpace(str) {
     return str.replace(/[^\w\s]/gi, '');
 }
 
-function showSnackBar(text){
+function showSnackBar(text) {
     $('#snackbar').text(text);
     $('#snackbar').addClass('show');
-    setTimeout(function(){ $('#snackbar').removeClass('show'); }, 3000);
+    setTimeout(function() { $('#snackbar').removeClass('show'); }, 3000);
 }
 
-$('[data-toggle="tooltip"]').tooltip(); 
+$('[data-toggle="tooltip"]').tooltip();
 
-$(document).ready(function(){
-    $('.hero').css('padding-top',$('.header').height()+30)
+$(document).ready(function() {
+    if (location.href !== '/index.html')
+        $("#header-wrapper").load("header.html", function() {
+            $('.hero').css('padding-top', $('.header').height() + 30)
+        });
 })
