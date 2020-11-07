@@ -1,0 +1,146 @@
+1) Login  {url}/login [POST]
+
+Input 
+user id (id or email)
+	{
+ 	  "user_id":"1061025",
+   	  "passsword":"userpassword"
+	}
+
+Output 
+
+{
+	"code": 0,
+	"desc": "success",
+	"message": "success",
+	"data":"jwt_token"
+}
+
+
+2) Product Details : {url}/product/details/get [GET]
+
+header : auth:jwt_token
+
+-> complete -> List-main_catog -> List->sub catogry -> ListproductList availble 
+
+{
+   "code":0,
+   "desc":"success",
+   "message":"success",
+   "data":[
+      {
+         "misc":"10 % offer on 3 liters",
+         "main_category":"perishables",
+         "sub_category":"dairy_products",
+         "product_status":"available",
+         "product_id":"1983721",
+         "product_name":"aroma milk",
+         "max_quantity":"10",
+         "atb_quantity":"2",
+         "min_range":"0.25",
+         "quantity_unit":"liter",
+         "price_per_unit":"21.00",
+         "prod_desc":"Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+         "product_image":"img/featured/feature-1.jpg"
+      },
+        {
+         "misc":"10 % offer on 3 liters",
+         "main_category":"perishables",
+         "sub_category":"vegetables",
+         "product_status":"available",
+         "product_id":"1983721",
+         "product_name":"aroma milk",
+         "max_quantity":"10",
+         "min_range":"0.25",
+         "quantity_unit":"liter",
+         "price_per_unit":"21.00",
+         "prod_desc":"Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+         "product_image":"img/featured/feature-1.jpg"
+      }
+     ]
+}      
+
+3) add to cart 
+
+header
+
+remove
+
+{
+   [
+      "productId":"1983721",
+      "quantity":"-1"
+	]
+}
+
+add
+
+{
+   [
+      "productId":"1983721",
+      "quantity":"1"
+	]
+}
+
+
+4) 
+
+header (view cart )
+
+[
+
+	{
+         "misc":"10 % offer on 3 liters",
+         "main_category":"perishables",
+         "sub_category":"milk",
+         "product_status":"available",
+         "product_id":"1983721",
+         "product_name":"aroma milk",
+         "max_quantity":"2",
+         "min_range":"0",
+         "quantity_unit":"liter",
+         "price_per_unit":"21.00",
+         "prod_desc":"Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+         "product_image":"img/featured/feature-1.jpg"
+         "order_id":"023984028"
+      },
+      {
+         "misc":"10 % offer on 3 liters",
+         "main_category":"perishables",
+         "sub_category":"vegetable",
+         "product_status":"available",
+         "product_id":"1983721",
+         "product_name":"cabagge",
+         "max_quantity":"2",
+         "min_range":"0",
+         "quantity_unit":"piece",
+         "price_per_unit":"21.00",
+         "prod_desc":"Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.",
+         "product_image":"img/featured/feature-1.jpg"
+         "order_id":"023984028"
+      }
+
+
+]
+
+
+5) Order confirm {
+	"023984028"
+
+}
+
+
+response
+
+{
+   "code":0,
+   "desc":"success",
+   "message":"success",
+   "data":{
+      "order_status":"order_confirmed",
+      "payment":{
+         "status":"pending",
+         "amount":"Rs .909.00"
+      }
+   }
+}
