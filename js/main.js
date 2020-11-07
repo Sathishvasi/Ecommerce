@@ -37,13 +37,13 @@
     });
 
     //Humberger Menu
-    $(".humberger__open").on('click', function () {
+    $(document).on('click','.humberger__open', function () {
         $(".humberger__menu__wrapper").addClass("show__humberger__menu__wrapper");
         $(".humberger__menu__overlay").addClass("active");
         $("body").addClass("over_hid");
     });
 
-    $(".humberger__menu__overlay").on('click', function () {
+    $(document).on('click','.humberger__menu__overlay', function () {
         $(".humberger__menu__wrapper").removeClass("show__humberger__menu__wrapper");
         $(".humberger__menu__overlay").removeClass("active");
         $("body").removeClass("over_hid");
@@ -261,9 +261,6 @@
         }
     })
 
-    $(document).on('click','.fa-user', function(){
-        $('.login-dropdown').toggleClass('addFlex');
-    });
 
 })(jQuery);
 
