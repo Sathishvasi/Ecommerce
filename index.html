@@ -283,7 +283,7 @@
         //       console.log(err);
         //     }
         // });
-        renderProducts("Dried Fruits");
+        renderProducts("Thrills");
 
         function renderProducts(selectedCategory) {
             $("#preloder").show();
@@ -295,7 +295,7 @@
                 `<li class="active" data-filter="*">All</li>`
             );
 
-            $.get("./data/Product.json", function(response, status) {
+            $.get("http://ec2-13-58-84-7.us-east-2.compute.amazonaws.com:7071/product/details/getallproduct", function(response, status) {
                 // console.log("Data: ", data);
                 products = "";
                 categoryArray = [];
@@ -315,7 +315,7 @@
             )} ${productCategory}" id="${val.product_id}">
                       <div class="featured__item">
                           <div class="featured__item__pic set-bg" style="background-image: url(${
-                            val.product_image === ""
+                            val.product_image === "" || val.product_image === null
                               ? "img/placeholder.png"
                               : val.product_image
                           });" data-id="${val.product_id}" data-title="${

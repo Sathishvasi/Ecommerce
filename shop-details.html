@@ -364,7 +364,7 @@
         console.log(productDetail);
         let parentEle = $('.product-details');
         $('.product-details').attr('id',productDetail.productID);
-        $('.product__details__pic__item--large').attr('src',productDetail.productImage);
+        $('.product__details__pic__item--large').attr('src',productDetail.productImage === null || productDetail.productImage === "" ? "img/placeholder.png": productDetail.productImage);
         $('.product__details__text h3').text(productDetail.productName);
         $('.product__details__price').text('Rs.'+productDetail.productPrice);
         $('.product__details__text p').text(productDetail.productDesc);
