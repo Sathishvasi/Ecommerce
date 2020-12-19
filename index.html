@@ -283,9 +283,10 @@
         //       console.log(err);
         //     }
         // });
-        renderProducts("Thrills");
+        renderProducts("");
 
         function renderProducts(selectedCategory) {
+            
             $("#preloder").show();
             $(".loader").show();
 
@@ -302,6 +303,7 @@
                 mainCategoryArray = [];
 
                 let data = response.data;
+                selectedCategory = selectedCategory === "" ? data[0].main_category.name : selectedCategory;
 
                 let filteredProducts = data.filter(function(el) {
                     return el.main_category.name === selectedCategory;

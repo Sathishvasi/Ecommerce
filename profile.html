@@ -115,83 +115,9 @@
         <div class="container">
             <div class="row">
         <h3 class="ml-3">Order History</h3>
-        <div class="col-md-12">
-
-            <div class="history-items-wrapper">
-
-            <div class="history-items"> 
-              <img src="./img/done.png" alt="Done">
-            
-              <h4>
-                  Order ID : #1231232
-              </h4>
-            
-                <div><strong>Purchased</strong> : <span id="namespan">5</span> <br> <br>
-                <strong>Total </strong>:    <span id="emailspan">Rs.234.00</span></div>
-            </div>
-          </div>
-
-          <div class="history-items-wrapper">
-
-            <div class="history-items"> 
-              <img src="./img/pending.png" alt="Done">
-            
-              <h4>
-                  Order ID : #4234234
-              </h4>
-            
-                <div><strong>Purchased</strong> : <span id="namespan">5</span> <br> <br>
-                <strong>Total </strong>:    <span id="emailspan">Rs.2345.00</span></div>
-            </div>
-
-            </div>
-            <div class="history-items-wrapper">
-
-              <div class="history-items"> 
-                <img src="./img/done.png" alt="Done">
-              
-                <h4>
-                    Order ID : #6785676
-                </h4>
-              
-                  <div><strong>Purchased</strong> : <span id="namespan">5</span> <br> <br>
-                  <strong>Total </strong>:    <span id="emailspan">Rs.3454.00</span></div>
-              </div>
-  
-              </div>
-              <div class="history-items-wrapper">
-
-                <div class="history-items"> 
-                  <img src="./img/done.png" alt="Done">
-                
-                  <h4>
-                      Order ID : #1231232
-                  </h4>
-                
-                    <div><strong>Purchased</strong> : <span id="namespan">5</span> <br> <br>
-                    <strong>Total </strong>:    <span id="emailspan">Rs.134.00</span></div>
-                </div>
-    
-                </div>
-                <div class="history-items-wrapper">
-
-                  <div class="history-items"> 
-                    <img src="./img/pending.png" alt="Done">
-                  
-                    <h4>
-                        Order ID : #2343432
-                    </h4>
-                  
-                      <div><strong>Purchased</strong> : <span id="namespan">5</span> <br> <br>
-                      <strong>Total </strong>:    <span id="emailspan">Rs.3444.00</span></div>
-                  </div>
-      
-                  </div>
-
-
-          </div>
-
-        
+        <div class="col-md-12" id="order-details">
+          <!-- dynamic -->
+        </div>
         </div>
         </div>
     </section>
@@ -296,7 +222,26 @@
         //Enable loader
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
+        $.get("/data/Order.json", function(response, status) {
+          let data = response.data;
+          let orderHTML = "", orderImg;
+          data.forEach((val,index)=>{
+            orderImg = val.orderStatus === 1 ? "./img/pending.png" : "./img/done.png";
+            orderHTML+= `<div class="history-items-wrapper">
+              <div class="history-items"> 
+                <img src="${orderImg}" alt="Done">
 
+                <h4>
+                    Order ID : #${val.orderId}
+                </h4>
+
+                  <div><strong>Purchased</strong> : <span id="namespan">${val.quantity}</span> <br> <br>
+                  <strong>Total </strong>:    <span id="emailspan">Rs.${val.totalPrice}</span></div>
+              </div>
+              </div>`;
+          });
+          $('#order-details').append(orderHTML);
+        })
     </script>
   </body>
 </html>

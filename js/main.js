@@ -222,7 +222,7 @@
         location.href = "shop-details.html";
     });
 
-    $('.trigger-search').on('click', function() {
+    $(document).on('click', '.trigger-search', function() {
         let inputVal = $('.trigger-search').siblings('input').val();
         if (inputVal != '') {
             localStorage.setItem("searchKey", inputVal);
@@ -234,7 +234,7 @@
 })(jQuery);
 
 function formatSpace(str) {
-    return str.replace(/[^\w\s]/gi, '');
+    return str.replace(/[\s]/gi, '-').toLowerCase();
 }
 
 function showSnackBar(text) {
