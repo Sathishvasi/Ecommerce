@@ -65,7 +65,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="img/product/details/product-details-1.jpg" alt="">
+                                src="img/placeholder.png" alt="Product Image">
                         </div>
                         <!-- <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl="img/product/details/product-details-2.jpg"
@@ -81,7 +81,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">
-                        <h3>Vetgetable’s Package</h3>
+                        <h3></h3>
                         <div class="product__details__rating">
                             <!-- <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -90,10 +90,8 @@
                             <i class="fa fa-star-half-o"></i> -->
                             <span></span>
                         </div>
-                        <div class="product__details__price">$50.00</div>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                            vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                            quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+                        <div class="product__details__price"></div>
+                        <p></p>
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
@@ -117,7 +115,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12 d-none">
                     <div class="product__details__tab">
 
                         <div class="tab-content">
@@ -310,26 +308,51 @@
     <script src="js/main.js"></script>
 
     <script>
-        let productDetail = JSON.parse(localStorage.getItem('productDetails'));
-        console.log(productDetail);
-        let parentEle = $('.product-details');
-        $('.product-details').attr('id',productDetail.productID);
-        $('.product__details__pic__item--large').attr('src',productDetail.productImage === null || productDetail.productImage === "" ? "img/placeholder.png": productDetail.productImage);
-        $('.product__details__text h3').text(productDetail.productName);
-        $('.product__details__price').text('Rs.'+productDetail.productPrice);
-        $('.product__details__text p').text(productDetail.productDesc);
-        $('.p-weight').text(productDetail.productWeight);
-        $('.p-availability').text(productDetail.productStatus.toLocaleLowerCase() === "available" ? "In Stock" : "Out of Stock");
-        $('.product__details__rating span').text(`(${productDetail.Misc})`);
-        $('.pro-qty input').val(productDetail.productMinQuantity)
+        // let productDetail = JSON.parse(localStorage.getItem('productDetails'));
+        // console.log(productDetail);
+        // let parentEle = $('.product-details');
+        // $('.product-details').attr('id',productDetail.productID);
+        // $('.product__details__pic__item--large').attr('src',productDetail.productImage === null || productDetail.productImage === "" ? "img/placeholder.png": productDetail.productImage);
+        // $('.product__details__text h3').text(productDetail.productName);
+        // $('.product__details__price').text('Rs.'+productDetail.productPrice);
+        // $('.product__details__text p').text(productDetail.productDesc);
+        // $('.p-weight').text(productDetail.productWeight);
+        // $('.p-availability').text(productDetail.productStatus.toLocaleLowerCase() === "available" ? "In Stock" : "Out of Stock");
+        // $('.product__details__rating span').text(`(${productDetail.Misc})`);
+        // $('.pro-qty input').val(productDetail.productMinQuantity)
 
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+        
 
         $(document).on('click','.add-cart', function(e){
             e.preventDefault();
             showSnackBar('Selected Product added to Cart')
         });
+
+        $.get(`http://ec2-13-58-84-7.us-east-2.compute.amazonaws.com:7071/product/details/getProductDetails?productId=${localStorage.getItem('productId')}`, function(response, status) {
+            $(".loader").fadeOut();
+            $("#preloder").delay(200).fadeOut("slow");
+            console.log(response);
+
+            let productDetail = response.data;
+            let parentEle = $('.product-details');
+            $('.product-details').attr('id',productDetail.productId);
+            $('.product__details__pic__item--large').attr('src',productDetail.product_image === null || productDetail.product_image === "" ? "img/placeholder.png": productDetail.product_image);
+            $('.product__details__text h3').text(productDetail.productName);
+            $('.product__details__price').text('Rs.'+productDetail.pricePerUnit);
+            $('.product__details__text p').text(productDetail.productDesc);
+            $('.p-weight').text(productDetail.min_range+" "+productDetail.productUnit);
+            $('.p-availability').text(productDetail.product_status.toLocaleLowerCase() === "available" ? "In Stock" : "Out of Stock");
+            $('.product__details__rating span').text(`(${productDetail.misc})`);
+            $('.pro-qty input').val(productDetail.min_range);
+
+            //set local
+            var productDetails = {
+                productPrice: productDetail.pricePerUnit,
+                productMaxQuantity: productDetail.max_range,
+                productMinQuantity: productDetail.min_range
+            }
+            localStorage.setItem('productDetails', JSON.stringify(productDetails));
+        })
     </script>
 </body>
 

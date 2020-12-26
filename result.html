@@ -191,7 +191,7 @@
               response.data.forEach((val, index) => {
                 console.log(val);
                 let resultImg = val.product_image === "" || val.product_image === null ? "img/placeholder.png" : val.product_image;
-                resultHTML+=`<a href="#" class="latest-product__item col-lg-3 col-md-4 col-sm-6">
+                resultHTML+=`<a href="#" class="latest-product__item col-lg-3 col-md-4 col-sm-6" data-pid="${val.productId}">
                     <div class="latest-product__item__pic">
                         <img src="${resultImg}" alt="">
                     </div>
@@ -206,6 +206,12 @@
             }
             $('.latest-prdouct__slider__item').append(resultHTML);
         })
+
+        $(document).on('click', '.latest-product__item', function(){
+          console.log($(this).data('pid'))
+          localStorage.setItem('productId', $(this).data('pid'));
+          location.href = "shop-details.html";
+        });
     </script>
   </body>
 </html>

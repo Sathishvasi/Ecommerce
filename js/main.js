@@ -183,9 +183,9 @@
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
         let productDetail = JSON.parse(localStorage.getItem('productDetails'));
-        let maxQuantity = productDetail.productMaxQuantity;
-        let minQuantity = productDetail.productMinQuantity;
-        let productPrice = productDetail.productPrice;
+        let maxQuantity = parseFloat(productDetail.productMaxQuantity);
+        let minQuantity = parseFloat(productDetail.productMinQuantity);
+        let productPrice = parseFloat(productDetail.productPrice);
         let existingPrice = parseFloat($('.product__details__price').text().replace('Rs.',''));
 
         if ($button.hasClass('inc')) {
@@ -216,20 +216,22 @@
 
     $(document).on('click', '.featured__item__pic', function() {
 
-        var productDetails = {
-            productID: $(this).data('id'),
-            productName: $(this).data('title'),
-            productImage: $(this).data('img'),
-            productDesc: $(this).data('desc'),
-            productPrice: $(this).data('price'),
-            productStatus: $(this).data('status'),
-            productWeight: $(this).data('weight'),
-            productMaxQuantity: $(this).data('max-quantity'),
-            productMinQuantity: $(this).data('min-range'),
-            Misc: $(this).data('misc')
-        }
-        console.log(productDetails);
-        localStorage.setItem('productDetails', JSON.stringify(productDetails));
+        // var productDetails = {
+        //     productID: $(this).data('id'),
+        //     productName: $(this).data('title'),
+        //     productImage: $(this).data('img'),
+        //     productDesc: $(this).data('desc'),
+        //     productPrice: $(this).data('price'),
+        //     productStatus: $(this).data('status'),
+        //     productWeight: $(this).data('weight'),
+        //     productMaxQuantity: $(this).data('max-quantity'),
+        //     productMinQuantity: $(this).data('min-range'),
+        //     Misc: $(this).data('misc')
+        // }
+        
+        // localStorage.setItem('productDetails', JSON.stringify(productDetails));
+        localStorage.setItem('productId', $(this).data('id'));
+
         location.href = "shop-details.html";
     });
 
