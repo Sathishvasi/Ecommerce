@@ -254,7 +254,8 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    `
+    <script src="js/header.js"></script>
+    
     <script>
         let products = "",
             productCategory,
@@ -330,7 +331,7 @@
               val.price_per_unit
             }" data-status="${val.product_status}" data-weight="${
               val.min_range
-            } ${val.quantity_unit}" data-quantity="${val.max_quantity}">
+            } ${val.quantity_unit}" data-misc="${val.misc}" data-max-quantity="${val.max_quantity}" data-min-range="${val.min_range}">
                               <ul class="featured__item__pic__hover">
                                   <li><a href="#" class="add-fav"><i class="fa fa-heart"></i></a></li>
                                   <li><a href="#" class="add-cart"><i class="fa fa-shopping-cart"></i></a></li>

@@ -20,4 +20,8 @@ $( document ).ready(function() {
     $(document).on('click','.fa-user', function(){
       $('.login-dropdown').toggleClass('addFlex');
     });
+    // Wallet & Redeem val
+    let walletVal = 0, redeemVal = 0;
+    $('.walletVal').text(walletVal);
+    $('.redeemVal').text(redeemVal);
 });

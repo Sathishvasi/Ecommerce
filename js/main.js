@@ -182,25 +182,34 @@
     proQty.on('click', '.qtybtn', function() {
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
+        let productDetail = JSON.parse(localStorage.getItem('productDetails'));
+        let maxQuantity = productDetail.productMaxQuantity;
+        let minQuantity = productDetail.productMinQuantity;
+        let productPrice = productDetail.productPrice;
+        let existingPrice = parseFloat($('.product__details__price').text().replace('Rs.',''));
+
         if ($button.hasClass('inc')) {
-            let productDetail = JSON.parse(localStorage.getItem('productDetails'));
-            let maxQuantity = productDetail.productQuantity;
             if (parseFloat(oldValue) < maxQuantity) {
-                var newVal = parseFloat(oldValue) + 1;
+                var newVal = parseFloat(oldValue) + minQuantity;
                 //Update weight
-                updateProductWeight(oldValue, newVal)
+                updateProductWeight(oldValue, newVal);
+
+                $('.product__details__price').text('Rs.'+(existingPrice+productPrice));
             } else {
                 var newVal = parseFloat(oldValue)
             }
         } else {
             // Don't allow decrementing below zero
-            if (oldValue > 1) {
-                var newVal = parseFloat(oldValue) - 1;
+            if (parseFloat(oldValue) > minQuantity) {
+                var newVal = parseFloat(oldValue) - minQuantity;
                 //Update weight
-                updateProductWeight(oldValue, newVal)
+                updateProductWeight(oldValue, newVal);
+
+                $('.product__details__price').text('Rs.'+(existingPrice-productPrice));
             } else {
-                newVal = 1;
+                newVal = minQuantity;
             }
+            
         }
         $button.parent().find('input').val(newVal);
     });
@@ -215,7 +224,9 @@
             productPrice: $(this).data('price'),
             productStatus: $(this).data('status'),
             productWeight: $(this).data('weight'),
-            productQuantity: $(this).data('quantity')
+            productMaxQuantity: $(this).data('max-quantity'),
+            productMinQuantity: $(this).data('min-range'),
+            Misc: $(this).data('misc')
         }
         console.log(productDetails);
         localStorage.setItem('productDetails', JSON.stringify(productDetails));
