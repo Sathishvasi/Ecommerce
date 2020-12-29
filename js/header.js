@@ -1,4 +1,26 @@
+function viewBagCallback(res){
+  if(res.desc === "success" && Array.isArray(res.data)){
+    console.log('Got Bag Items successfully'+res.data.length);
+    //Original cart count(Number of items)
+    var bagCount = res.data.length;
+    $('.bag-count').text(bagCount);
+   
+  }else{
+    console.log('Facing some issue, Will try after some time / No items in Cart');
+  }
+}
+async function viewBag(userId,viewBagCallback){
+  // Need to replace atb data here
+  var queryParam = 'userId='+userId;
+  var apiData = {
+      "queryParam": queryParam,
+      "pathParam": "/order/getUserCartDetails",
+      "requestMethod": "POST"
+  }
+  const res =  await  makeAPI(apiData,viewBagCallback);
+}
 $( document ).ready(function() {
+    viewBag(111,viewBagCallback);
     if(localStorage.getItem("loginStatus") === 'true'){
       console.log("true")
       $('.loggedin-icon').children().removeClass('fa fa-sign-in');

@@ -3993,3 +3993,11 @@ a.add-fav,
     color: #28a745;
     margin-bottom: 25x;
 }
+
+.ptrevtsne{
+    pointer-events: none;
+}
+
+.hide{
+    display: none;
+}
