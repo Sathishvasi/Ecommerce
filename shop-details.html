@@ -22,6 +22,13 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script> 
+      $(function(){
+        $("#header-wrapper").load("header.html"); 
+      });
+    </script>
+     <script src="js/common.js"></script>
+     <script src="js/shop-details.js"></script>     
 </head>
 
 <body>
@@ -95,7 +102,7 @@
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="1" disabled>
+                                    <input type="text" class="product-atp-qty" value="1" disabled>
                                 </div>
                             </div>
                         </div>
@@ -306,54 +313,6 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-        // let productDetail = JSON.parse(localStorage.getItem('productDetails'));
-        // console.log(productDetail);
-        // let parentEle = $('.product-details');
-        // $('.product-details').attr('id',productDetail.productID);
-        // $('.product__details__pic__item--large').attr('src',productDetail.productImage === null || productDetail.productImage === "" ? "img/placeholder.png": productDetail.productImage);
-        // $('.product__details__text h3').text(productDetail.productName);
-        // $('.product__details__price').text('Rs.'+productDetail.productPrice);
-        // $('.product__details__text p').text(productDetail.productDesc);
-        // $('.p-weight').text(productDetail.productWeight);
-        // $('.p-availability').text(productDetail.productStatus.toLocaleLowerCase() === "available" ? "In Stock" : "Out of Stock");
-        // $('.product__details__rating span').text(`(${productDetail.Misc})`);
-        // $('.pro-qty input').val(productDetail.productMinQuantity)
-
-        
-
-        $(document).on('click','.add-cart', function(e){
-            e.preventDefault();
-            showSnackBar('Selected Product added to Cart')
-        });
-
-        $.get(`http://ec2-13-58-84-7.us-east-2.compute.amazonaws.com:7071/product/details/getProductDetails?productId=${localStorage.getItem('productId')}`, function(response, status) {
-            $(".loader").fadeOut();
-            $("#preloder").delay(200).fadeOut("slow");
-            console.log(response);
-
-            let productDetail = response.data;
-            let parentEle = $('.product-details');
-            $('.product-details').attr('id',productDetail.productId);
-            $('.product__details__pic__item--large').attr('src',productDetail.product_image === null || productDetail.product_image === "" ? "img/placeholder.png": productDetail.product_image);
-            $('.product__details__text h3').text(productDetail.productName);
-            $('.product__details__price').text('Rs.'+productDetail.pricePerUnit);
-            $('.product__details__text p').text(productDetail.productDesc);
-            $('.p-weight').text(productDetail.min_range+" "+productDetail.productUnit);
-            $('.p-availability').text(productDetail.product_status.toLocaleLowerCase() === "available" ? "In Stock" : "Out of Stock");
-            $('.product__details__rating span').text(`(${productDetail.misc})`);
-            $('.pro-qty input').val(productDetail.min_range);
-
-            //set local
-            var productDetails = {
-                productPrice: productDetail.pricePerUnit,
-                productMaxQuantity: productDetail.max_range,
-                productMinQuantity: productDetail.min_range
-            }
-            localStorage.setItem('productDetails', JSON.stringify(productDetails));
-        })
-    </script>
 </body>
 
 </html>

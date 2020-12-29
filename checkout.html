@@ -22,13 +22,15 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/header.js"></script>
 </head>
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
    <div id="header-wrapper"></div>
@@ -150,10 +152,10 @@
                                     <li>Fresh Vegetable <span>$151.99</span></li>
                                     <li>Organic Bananas <span>$53.99</span></li> -->
                                 </div>
-                                <div class="checkout__order__subtotal">Subtotal <span>₹750.99</span></div>
-                                <div class="checkout__order__tax">Tax <span>₹750.99</span></div>
-                                <div class="checkout__order__total">Total <span>₹750.99</span></div>
-                                <div class="checkout__order__redeem_total">Redeem points <span>₹750.99</span></div>
+                                <div class="checkout__order__subtotal">Subtotal <span>₹0.0</span></div>
+                                <div class="checkout__order__tax">Tax <span>₹0.0</span></div>
+                                <div class="checkout__order__total">Total <span>₹0.0</span></div>
+                                <div class="checkout__order__redeem_total">Redeem points <span>₹0.0</span></div>
                                 <!-- <div class="checkout__input__checkbox">
                                     <label for="acc-or">
                                         Create an account?
@@ -283,56 +285,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-        $.get("./data/Checkout.json", function (response, status) {
-            // console.log("Data: ", data);
-            let data = response.data;
-            let products = '';
-            console.log(data);
-            let redeemPercentage = 0;
-            let redeemRewardValue = response.redeemRewardValue;
-            let taxPercentage = response.taxPercentage;
-            let cartSubTotal = 0;
-            data.catagories.forEach(function(val,index){
-                products+= `<div class="purchased__product"><div>${val.name}</div><div><div class="redeempoint-cont position-relative"><img src="./img/star.png" alt=""/><div>${val.redeemPercentage*redeemRewardValue}</div></div></div><div>₹${val.price}.00</div></div>`
-                redeemPercentage = redeemPercentage + redeemRewardValue*val.redeemPercentage;
-                cartSubTotal+= val.price;
-                // console.log(val)
-            })
-            let taxValue = (cartSubTotal/100)*taxPercentage;
-            $('.purchased__products').append(products);
-            $('.checkout__order__subtotal span').text("₹"+cartSubTotal+".00");
-            $('.checkout__order__tax span').text("₹"+taxValue);
-            $('.checkout__order__total span').text("₹"+(cartSubTotal + taxValue));
-            if(redeemPercentage > 0){
-                $('.checkout__order__redeem_total span').text(redeemPercentage);
-                $('.checkout__order__redeem_total').append(`<div class="redeem-success-message">Congrats, you have earned ${redeemPercentage} redeem points for this order</div>`);
-            }
-
-            //Prefilling Billing Details
-            $('.checkout__form .first-name').val("Sathish");
-            $('.checkout__form .last-name').val("Kumar");
-            $('.checkout__form .address-line1').val("19/a");
-            $('.checkout__form .address-line2').val("Railway colony");
-            $('.checkout__form .city').val("Dgl");
-            $('.checkout__form .state').val("Tamilnadu");
-            $('.checkout__form .zip-code').val("624005");
-            $('.checkout__form .phone').val("8861927499");
-            $('.checkout__form .email').val("sathish17595@gmail.com");
-
-            //Enable loader
-            $(".loader").fadeOut();
-            $("#preloder").delay(200).fadeOut("slow");
-        });
-
-        $('.place-order').on('click',function(e) {
-            e.preventDefault();
-            $('.thankyou-wrapper').fadeIn();
-            $('body').css('overflow','hidden')
-        })
-    </script>
-
+    <script src="js/checkout.js"></script>
 </body>
 
 </html>

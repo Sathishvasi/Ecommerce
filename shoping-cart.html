@@ -24,14 +24,15 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/shoping-cart.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/header.js"></script>
   </head>
 
   <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
       <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <div id="header-wrapper"></div>
@@ -63,7 +64,7 @@
             <div class="shoping__cart__table">
               <table>
                 <thead>
-                  <tr>
+                  <tr class="cart-table-titles">
                     <th class="shoping__product">Products</th>
                     <th>Price</th>
                     <th>Quantity</th>
@@ -299,164 +300,6 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-      let products = "",
-        productCategory,
-        categoryArray = [],
-        subtotal = 0;
-
-      $.get("./data/Cart.json", function (response, status) {
-        // console.log("Data: ", data);
-        let data = response.data.products;
-        data.forEach((val, index) => {
-          products += `<tr>
-                        <td class="shoping__cart__item">
-                            <img src="${val.product_image}" alt="">
-                            <h5>${val.product_name}</h5>
-                        </td>
-                        <td class="shoping__cart__price">
-                            ₹${val.price_per_unit}
-                        </td>
-                        <td class="shoping__cart__quantity">
-                            <div class="quantity">
-                                <div class="pro-qty">
-                                    <input type="text" value="${
-                                      val.selected_quantity
-                                    }" disabled>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="shoping__cart__total">
-                            ₹${val.price_per_unit * val.selected_quantity}
-                        </td>
-                        <td class="shoping__cart__item__close">
-                            <span class="icon_close"></span>
-                        </td>
-                    </tr>`;
-          subtotal += parseFloat(val.price_per_unit);
-        });
-
-        //Price append
-        let taxPercentage = response.taxPercentage;
-        let taxValue = (subtotal/100)*taxPercentage;
-        $(".cart_sub-total").text("₹" + subtotal + ".00");
-        $(".cart_tax").text("₹" + taxValue);
-        $(".cart_total").text("₹" + (taxValue + subtotal));
-
-        // Product append
-        $(".shoping__cart__table tbody").append(products);
-
-        /*-------------------
-                Quantity change
-            --------------------- */
-        var proQty = $(".pro-qty");
-        proQty.prepend('<span class="dec qtybtn">-</span>');
-        proQty.append('<span class="inc qtybtn">+</span>');
-        proQty.on("click", ".qtybtn", function () {
-          var $button = $(this);
-          var oldValue = $button.parent().find("input").val();
-          if ($button.hasClass("inc")) {
-            let productDetail = JSON.parse(
-              localStorage.getItem("productDetails")
-            );
-            let maxQuantity = productDetail.productQuantity;
-            if (parseFloat(oldValue) < maxQuantity) {
-              var newVal = parseFloat(oldValue) + 1;
-            } else {
-              var newVal = parseFloat(oldValue);
-            }
-          } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 0) {
-              var newVal = parseFloat(oldValue) - 1;
-            } else {
-              newVal = 0;
-            }
-          }
-          $button.parent().find("input").val(newVal);
-
-          let item = $(this).closest("tr").find(".shoping__cart__total");
-          let currPrice = $(this).closest("tr").find(".shoping__cart__price");
-          let itemTotal = parseInt(currPrice.text().replace("₹", ""));
-          // product current item
-          item.text("₹" + itemTotal * newVal);
-
-          // cart subtotal
-          $(".cart_sub-total").text("₹" + getTotal() + ".00");
-
-          // cart total
-          applyTotal();
-        });
-
-        //CLose event
-        $(document).on("click", ".shoping__cart__item__close", function () {
-          $(this).closest("tr").remove();
-        });
-
-        //Enable loader
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-      });
-
-      if (localStorage.getItem("loginStatus") === "true") {
-        $(".header__cart ul li:last-child i").attr("class", "fa fa-user");
-        $(".header__cart ul li:last-child>a").attr("href", "#");
-      }
-
-      $("#wallet-input").on("keyup", function () {
-        let currentVal = $(this).val();
-        if (currentVal.length != "") {
-          $(this).siblings().addClass("active");
-          $(this).siblings().prop("disabled", false);
-        } else {
-          $(this).siblings().removeClass("active");
-          $(this).siblings().prop("disabled", true);
-        }
-      });
-      $(".wallet-form").on("submit", function (e) {
-        e.preventDefault();
-        let inputVal = parseInt($("#wallet-input").val());
-        let existingVal = parseInt($(".walletVal").text());
-        let existingWalletVal = parseInt($(".cart_wallet").text().replace("₹", "").replace("-", ""));
-        let difference = existingVal - inputVal;
-        if (inputVal > 0 && difference > 0) {
-          showSnackBar("Offer applied successfully");
-          //update wallet value in total section
-          $(".cart_wallet").text("- ₹" + (inputVal+existingWalletVal) + ".00");
-          //clearing wallet input
-          $("#wallet-input").val("");
-          //update wallet values
-          $('.walletVal').text(difference);
-          //update primary total
-          let walletVal = parseInt($(".cart_wallet").text().replace("₹", "").replace("-", ""));
-          let subTotal = parseInt($(".cart_sub-total").text().replace("₹", ""));
-          let taxVal = parseInt($(".cart_tax").text().replace("₹", ""));
-
-          $(".cart_total").text("₹" + Math.abs((taxVal+subTotal) - walletVal) + ".00");
-        } else {
-          showSnackBar("Insufficient money");
-        }
-      });
-
-      function getTotal() {
-          let total = 0;
-          $(".shoping__cart__table tr").each((index, val) => {
-            let item = $(val).find(".shoping__cart__total");
-            let itemTotal = parseInt(item.text().replace("₹", ""));
-            if (index > 0) {
-              total += itemTotal;
-            }
-          });
-          return total;
-        }
-
-        function applyTotal(){
-          let taxVal = parseInt($(".cart_tax").text().replace("₹", ""));
-          let walletVal = parseInt($(".cart_wallet").text().replace("₹", ""));
-          walletVal = walletVal ? walletVal : 0;
-          $(".cart_total").text("₹" + (taxVal + walletVal + getTotal()) + ".00");
-        }
-    </script>
+    <script src="js/shoping-cart.js"></script>
   </body>
 </html>
