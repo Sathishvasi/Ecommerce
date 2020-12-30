@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     let userId = 111;
+    let orderAmount = 0;
     $.post("http://ec2-13-58-84-7.us-east-2.compute.amazonaws.com:7071/order/getUserCartDetails?userId="+userId, function (response, status) {
         // console.log("Data: ", data);
         let data = response.data;
@@ -20,6 +21,7 @@ $( document ).ready(function() {
         $('.checkout__order__subtotal span').text("₹"+cartSubTotal+".00");
         $('.checkout__order__tax span').text("₹"+taxValue);
         $('.checkout__order__total span').text("₹"+(cartSubTotal + taxValue));
+        orderAmount = cartSubTotal + taxValue;
         if(redeemPercentage > 0){
             $('.checkout__order__redeem_total span').text(redeemPercentage);
             $('.checkout__order__redeem_total').append(`<div class="redeem-success-message">Congrats, you have earned ${redeemPercentage} redeem points for this order</div>`);
@@ -48,14 +50,16 @@ $( document ).ready(function() {
                 let orderId = response.data[0].orderId;
                 $.post( `http://ec2-13-58-84-7.us-east-2.compute.amazonaws.com:7071/order/confirmorder?userId=${userId}&orderId=${orderId}`, function( data ) {
                     if(data.desc === 'success'){
+                        $('.current-orderid').text(orderId);
+                        $('.current-orderamount').text(orderAmount);
                         $('.thankyou-wrapper').fadeIn();
-                        $('body').css('overflow','hidden')
+                        $('body').css('overflow','hidden');
                     }else{
                         showSnackBar("Unable to place order right now");
                     }
                 });
             }else{
-
+                showSnackBar("Unable to get cart items right now");
             }
         })
     })
