@@ -7,9 +7,13 @@ makeAPI = function(apiData,cbk){
     const requestMethod = apiData.requestMethod || 'GET';
     const queryParams = apiData.queryParam || '';
     const bodyData =  apiData.bodyData || {};
+
+    var url = apiDomain+pathParam;
+    url = queryParams !==  "" ? (url + '?'+queryParams) : url;
+
     $.ajax({
         type: requestMethod,
-        url: apiDomain+pathParam+'?'+queryParams,
+        url : url,
         data: bodyData,
         success: function(data) {
             console.log("API-Success")
